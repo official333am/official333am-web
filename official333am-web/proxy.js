@@ -1,7 +1,7 @@
 var HttpsProxyAgent = require('https-proxy-agent');
 var proxyConfig = [{
   context: '/api',
-  target: 'https://official333am.github.io',
+  target: 'https://official333am.com',
   secure: false
 }];
 
