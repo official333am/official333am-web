@@ -6,13 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` to smoke test project when making changes locally on `localhost:4200`
 
-## Build (STEP 1)
+## Build (STEP 1) & Publish (STEP 2)
 
-Run `ng build --prod --base-href "https://official333am.com/"` to build the project
-
-## Publish (STEP 2)
-
-Run `ngh --no-silent` to publish the project
+Run `ng build && ngh --no-silent` to build the project
 
 ## Link (STEP 3)
 
