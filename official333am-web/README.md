@@ -2,14 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
-## Develop
+## Develop 
 
 Run `ng serve` to run application locally on `localhost:4200`
 
-## Build & Publish
+## Publish
 
-Run `publish.bat` to build and publish application
-
-## Access
-
-Open application at `official333am.com`
+Run `publish.bat` to publish application to `official333am.com`
