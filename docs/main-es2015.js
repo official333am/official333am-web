@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE TESTING APP\r\n  </h1>\r\n  <h2>\r\n    Everything on this page is an experiment. Kiran was here\r\n  </h2>\r\n</div>\r\n\r\n<artists></artists>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE TESTING APP\r\n  </h1>\r\n  <h2>\r\n    Everything on this page is an experiment. Kiran was here. So was Roro\r\n  </h2>\r\n</div>\r\n\r\n<artists></artists>\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULT
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">CASABLANCA</button>\r\n</div>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">CASABLANCA MA BOYZ</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -263,7 +263,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\rohit\Documents\GitHub\official333am-web\official333am-web\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\rohit\Documents\GitHub\official333am-web\src\main.ts */"./src/main.ts");
 
 
 /***/ })
