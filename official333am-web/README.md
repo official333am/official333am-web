@@ -14,9 +14,9 @@ Run `ng build --prod --base-href "https://official333am.com/"` to build the proj
 
 Run `ngh --no-silent` to publish the project
 
-## Online (STEP 3)
+## Link (STEP 3)
 
-Update custom domain field (located in Settings/GitHub Pages) to be `official333am.com`
+On `github.com`, update the custom domain field (located in Settings/GitHub Pages) to be `official333am.com`
 
 ## Disclaimer
 
