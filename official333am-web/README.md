@@ -16,7 +16,7 @@ Run `ngh --no-silent` to publish the project
 
 ## Link (STEP 3)
 
-On `github.com`, update the custom domain field (located in Settings/GitHub Pages) to be `official333am.com`
+On GitHub, update the custom domain field (located in Settings/GitHub Pages) to be `official333am.com`
 
 ## Disclaimer
 
