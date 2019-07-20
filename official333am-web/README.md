@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Develop (STEP 0)
 
-Run `ng serve` when making changes locally on `localhost:4200`
+Run `ng serve` to smoke test project when making changes locally on `localhost:4200`
 
 ## Build (STEP 1)
 
