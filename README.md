@@ -20,4 +20,4 @@ Run `compile.bat` to compile/commit/push changes to your local/remote branch
 
 ## Merge
 
-Merge your branch with `master` to deploy to `official333am.com`
+Merge your branch with `master` to deploy to [official333am.com](official333am.com)
