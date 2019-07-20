@@ -30,7 +30,18 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE\r\n  </h1>\r\n  <h2>\r\n    ROHITH'S BRANCH MADE THIS UPDATE\r\n  </h2>\r\n</div>\r\n\r\n<artists></artists>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE\r\n  </h1>\r\n</div>\r\n<artists></artists>\r\n<router-outlet></router-outlet>\r\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/artist-carousel/artist-carousel.component.html":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/artist-carousel/artist-carousel.component.html ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-3\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Joseph A</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">Singer/Producer</h6>\n          <p class=\"card-text\">\n            Some quick example text to build on the card title and make up the\n            bulk of the card's content.\n          </p>\n          <a href=\"#\" class=\"card-link\">Card link</a>\n          <a href=\"#\" class=\"card-link\">Another link</a>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">mikewave</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">Singer/Producer</h6>\n          <p class=\"card-text\">\n            Some quick example text to build on the card title and make up the\n            bulk of the card's content.\n          </p>\n          <a href=\"#\" class=\"card-link\">Card link</a>\n          <a href=\"#\" class=\"card-link\">Another link</a>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Stretch Dynamo</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">Rapper</h6>\n          <p class=\"card-text\">\n            Some quick example text to build on the card title and make up the\n            bulk of the card's content.\n          </p>\n          <a href=\"#\" class=\"card-link\">Card link</a>\n          <a href=\"#\" class=\"card-link\">Another link</a>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">blasé</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">Singer/Producer</h6>\n          <p class=\"card-text\">\n            Some quick example text to build on the card title and make up the\n            bulk of the card's content.\n          </p>\n          <a href=\"#\" class=\"card-link\">Card link</a>\n          <a href=\"#\" class=\"card-link\">Another link</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -41,7 +52,7 @@ module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULT
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">THIS BUTTON IS USELESS</button>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n    <h3>WELCOME TO THE ARTISTS PAGE</h3>\r\n</div>\r\n\r\n<artist-carousel></artist-carousel>"
 
 /***/ }),
 
@@ -133,6 +144,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/artists/artists.component */ "./src/app/containers/artists/artists.component.ts");
+/* harmony import */ var _components_artist_carousel_artist_carousel_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/artist-carousel/artist-carousel.component */ "./src/app/components/artist-carousel/artist-carousel.component.ts");
+
 
 
 
@@ -145,7 +158,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-            _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__["ArtistsComponent"]
+            _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__["ArtistsComponent"],
+            _components_artist_carousel_artist_carousel_component__WEBPACK_IMPORTED_MODULE_6__["ArtistCarouselComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -155,6 +169,48 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/artist-carousel/artist-carousel.component.css":
+/*!**************************************************************************!*\
+  !*** ./src/app/components/artist-carousel/artist-carousel.component.css ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYXJ0aXN0LWNhcm91c2VsL2FydGlzdC1jYXJvdXNlbC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/artist-carousel/artist-carousel.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/artist-carousel/artist-carousel.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: ArtistCarouselComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArtistCarouselComponent", function() { return ArtistCarouselComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ArtistCarouselComponent = class ArtistCarouselComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+ArtistCarouselComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'artist-carousel',
+        template: __webpack_require__(/*! raw-loader!./artist-carousel.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/artist-carousel/artist-carousel.component.html"),
+        styles: [__webpack_require__(/*! ./artist-carousel.component.css */ "./src/app/components/artist-carousel/artist-carousel.component.css")]
+    })
+], ArtistCarouselComponent);
 
 
 
