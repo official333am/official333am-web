@@ -30,18 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE\r\n  </h1>\r\n  <h2>\r\n    This shouldn't work ever.\r\n  </h2>\r\n</div>\r\n<about-us></about-us>\r\n<artists></artists>\r\n\r\n<contact-us></contact-us>\r\n<router-outlet></router-outlet>\r\n"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/components/about-us/about-us.component.html":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/components/about-us/about-us.component.html ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>about-us works!</p>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE\r\n  </h1>\r\n  <h2>\r\n    This shouldn't work ever.\r\n  </h2>\r\n</div>\r\n<artists></artists>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -172,8 +161,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/artists/artists.component */ "./src/app/containers/artists/artists.component.ts");
 /* harmony import */ var _components_artist_cards_artist_cards_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/artist-cards/artist-cards.component */ "./src/app/components/artist-cards/artist-cards.component.ts");
 /* harmony import */ var _components_artist_info_artist_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/artist-info/artist-info.component */ "./src/app/components/artist-info/artist-info.component.ts");
-/* harmony import */ var _components_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/about-us/about-us.component */ "./src/app/components/about-us/about-us.component.ts");
-
 
 
 
@@ -192,7 +179,6 @@ var AppModule = /** @class */ (function () {
                 _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__["ArtistsComponent"],
                 _components_artist_cards_artist_cards_component__WEBPACK_IMPORTED_MODULE_6__["ArtistCardsComponent"],
                 _components_artist_info_artist_info_component__WEBPACK_IMPORTED_MODULE_7__["ArtistInfoComponent"],
-                _components_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_8__["AboutUsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -203,50 +189,6 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/about-us/about-us.component.css":
-/*!************************************************************!*\
-  !*** ./src/app/components/about-us/about-us.component.css ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWJvdXQtdXMvYWJvdXQtdXMuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/components/about-us/about-us.component.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/components/about-us/about-us.component.ts ***!
-  \***********************************************************/
-/*! exports provided: AboutUsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutUsComponent", function() { return AboutUsComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var AboutUsComponent = /** @class */ (function () {
-    function AboutUsComponent() {
-    }
-    AboutUsComponent.prototype.ngOnInit = function () {
-    };
-    AboutUsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'about-us',
-            template: __webpack_require__(/*! raw-loader!./about-us.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/about-us/about-us.component.html"),
-            styles: [__webpack_require__(/*! ./about-us.component.css */ "./src/app/components/about-us/about-us.component.css")]
-        })
-    ], AboutUsComponent);
-    return AboutUsComponent;
 }());
 
 
