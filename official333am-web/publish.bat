@@ -1,0 +1,1 @@
+(ng build && copy CNAME dist) && ngh --no-silent
