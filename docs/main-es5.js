@@ -41,7 +41,7 @@ module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULT
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    <div class=\"card\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">Stretch Dynamo</h5>\n        <h6 class=\"card-subtitle mb-2 text-muted\">Rapper</h6>\n        <p class=\"card-text\">\n          This is a sample card for rapper Stretch Baby Rays\n        </p>\n        <a href=\"#\" class=\"card-link\">Card link</a>\n        <a href=\"#\" class=\"card-link\">Another link</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n    <div class=\"card\">\r\n      <div class=\"card-body\">\r\n        <h5 class=\"card-title\">Stretch Dynamo</h5>\r\n        <h6 class=\"card-subtitle mb-2 text-muted\">Rapper</h6>\r\n        <p class=\"card-text\">\r\n          This is a sample card for rapper Stretch Baby Rays\r\n        </p>\r\n        <a href=\"#\" class=\"card-link\">Card link</a>\r\n        <a href=\"#\" class=\"card-link\">Another link</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    <di
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    can we get some artist info?\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n    can we get some artist info?\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -388,7 +388,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\rohit\Documents\GitHub\official333am-web\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Kiran\Documents\official333am-web\src\main.ts */"./src/main.ts");
 
 
 /***/ })
