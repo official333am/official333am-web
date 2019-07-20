@@ -16,7 +16,7 @@ Run `ng serve` to run application locally on `localhost:4200`
 
 ## Compile/Commit/Push
 
-Run `compile.bat` to compile and commit changes to local/remote branch
+Run `compile.bat` to compilecommit/push changes to local/remote branch
 
 ## Merge
 
