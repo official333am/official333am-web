@@ -2,19 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
-## Develop (STEP 0)
+## Configuration
 
-Run `ng serve` to smoke test project when making changes locally on `localhost:4200`
+Run `npm i` to install dependencies
 
-## Build (STEP 1) & Publish (STEP 2)
+## Develop 
 
-Run `ng build && ngh --no-silent` to build and publish the project
+Run `ng serve` to run application locally on `localhost:4200`
 
-## Link (STEP 3)
+## Publish
 
-On GitHub, update the custom domain field (located in Settings/GitHub Pages) to be `official333am.com`
-
-## Disclaimer
-
-Try not to break anything :)
-
+Run `publish.bat` to publish application to `official333am.com`
