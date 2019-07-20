@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE TESTING APP\r\n  </h1>\r\n  <h2>\r\n    Everything on this page is an experiment. Kiran was here. So was Roro\r\n  </h2>\r\n</div>\r\n\r\n<artists></artists>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE TESTING APP\r\n  </h1>\r\n  <h2>\r\n    COMING SOON TO A BROWSER NEAR YOU\r\n  </h2>\r\n</div>\r\n\r\n<artists></artists>\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULT
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">CASABLANCA THE MOVIE</button>\r\n</div>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">CASABLANCA THE FILM</button>\r\n</div>\r\n"
 
 /***/ }),
 
