@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
+## Branches
+
+Pull the latest `master` branch and create a new branch to work on
+
 ## Configuration
 
 Run `npm i` to install dependencies
@@ -10,6 +14,10 @@ Run `npm i` to install dependencies
 
 Run `ng serve` to run application locally on `localhost:4200`
 
-## Publish
+## Compile/Commit/Push
 
-Run `publish.bat` to publish application to `official333am.com`
+Run `compile.bat` to compile and commit changes to local/remote branch
+
+## Merge
+
+Merge your branch with `master` to deploy to `official333am.com`
