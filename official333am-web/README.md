@@ -8,7 +8,7 @@ Run `ng serve` to smoke test project when making changes locally on `localhost:4
 
 ## Build (STEP 1) & Publish (STEP 2)
 
-Run `ng build && ngh --no-silent` to build and publish the project
+Run `publish.bat` to build and publish the project
 
 ## Link (STEP 3)
 
