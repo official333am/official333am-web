@@ -2,11 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
-## Develop (Step 1)
+## Develop
 
-Run `ng serve` to smoke test project when making changes locally on `localhost:4200`
+Run `ng serve` to run application locally on `localhost:4200`
 
-## Build & Publish (Step 2)
+## Build & Publish
 
-Run `publish.bat` to build and publish the project
+Run `publish.bat` to build and publish application
 
+## Access
+
+Open application at `official333am.com`
