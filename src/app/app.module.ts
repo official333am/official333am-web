@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArtistsComponent } from './containers/artists/artists.component';
+import { ArtistCardsComponent } from './components/artist-cards/artist-cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArtistsComponent
+    ArtistsComponent,
+    ArtistCardsComponent
   ],
   imports: [
     BrowserModule,
