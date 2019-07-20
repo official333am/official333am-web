@@ -8,6 +8,7 @@ import { ArtistCardsComponent } from './components/artist-cards/artist-cards.com
 import { ArtistInfoComponent } from './components/artist-info/artist-info.component';
 import { ContactUsComponent } from './containers/contact-us/contact-us.component';
 import { AboutUsComponent } from './containers/about-us/about-us.component';
+import { ArtistCarouselComponent } from './components/artist-carousel/artist-carousel.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AboutUsComponent } from './containers/about-us/about-us.component';
     ArtistInfoComponent,
     ContactUsComponent,
     AboutUsComponent,
+    ArtistCarouselComponent,
   ],
   imports: [
     BrowserModule,
