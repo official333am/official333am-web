@@ -1,1 +1,1 @@
-(ng build && copy CNAME dist) && ngh --no-silent
+ng build && copy CNAME "../docs"
