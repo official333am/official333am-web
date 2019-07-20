@@ -7,6 +7,7 @@ import { ArtistsComponent } from './containers/artists/artists.component';
 import { ArtistCardsComponent } from './components/artist-cards/artist-cards.component';
 import { ArtistInfoComponent } from './components/artist-info/artist-info.component';
 import { ContactUsComponent } from './containers/contact-us/contact-us.component';
+import { AboutUsComponent } from './containers/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ContactUsComponent } from './containers/contact-us/contact-us.component
     ArtistCardsComponent,
     ArtistInfoComponent,
     ContactUsComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

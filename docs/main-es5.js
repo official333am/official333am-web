@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE\r\n  </h1>\r\n  <h2>\r\n    This shouldn't work ever.\r\n  </h2>\r\n</div>\r\n<artists></artists>\r\n<contact-us></contact-us>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE\r\n  </h1>\r\n  <h2>\r\n    This shouldn't work ever.\r\n  </h2>\r\n</div>\r\n<artists></artists>\r\n<contact-us></contact-us>\r\n<about-us></about-us>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULT
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n    <div class=\"card\">\r\n      <div class=\"card-body\">\r\n        <h5 class=\"card-title\">Stretch Dynamo</h5>\r\n        <h6 class=\"card-subtitle mb-2 text-muted\">Rapper</h6>\r\n        <p class=\"card-text\">\r\n          This is a sample card for rapper Stretch Baby Rays\r\n        </p>\r\n        <a href=\"#\" class=\"card-link\">Card link</a>\r\n        <a href=\"#\" class=\"card-link\">Another link</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    <div class=\"card\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">Stretch Dynamo</h5>\n        <h6 class=\"card-subtitle mb-2 text-muted\">Rapper</h6>\n        <p class=\"card-text\">\n          This is a sample card for rapper Stretch Baby Rays\n        </p>\n        <a href=\"#\" class=\"card-link\">Card link</a>\n        <a href=\"#\" class=\"card-link\">Another link</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -52,7 +52,18 @@ module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n    can we get some artist info?\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    can we get some artist info?\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/containers/about-us/about-us.component.html":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/containers/about-us/about-us.component.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    <h3>\n      ABOUT US PAGE\n    </h3>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -63,7 +74,7 @@ module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">THIS BUTTON IS USELESS</button>\r\n</div>\r\n\r\n<artist-cards></artist-cards>\r\n\r\n<artist-info></artist-info>"
+module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n    <h3>\r\n      ARTIST PAGE\r\n    </h3>\r\n  </div>\r\n</div>\r\n\r\n<artist-cards></artist-cards>\r\n\r\n<artist-info></artist-info>\r\n"
 
 /***/ }),
 
@@ -74,7 +85,7 @@ module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>contact-us works!</p>\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n    <h3>CONTACT ME FOO</h3>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -173,6 +184,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_artist_cards_artist_cards_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/artist-cards/artist-cards.component */ "./src/app/components/artist-cards/artist-cards.component.ts");
 /* harmony import */ var _components_artist_info_artist_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/artist-info/artist-info.component */ "./src/app/components/artist-info/artist-info.component.ts");
 /* harmony import */ var _containers_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers/contact-us/contact-us.component */ "./src/app/containers/contact-us/contact-us.component.ts");
+/* harmony import */ var _containers_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./containers/about-us/about-us.component */ "./src/app/containers/about-us/about-us.component.ts");
+
 
 
 
@@ -193,6 +206,7 @@ var AppModule = /** @class */ (function () {
                 _components_artist_cards_artist_cards_component__WEBPACK_IMPORTED_MODULE_6__["ArtistCardsComponent"],
                 _components_artist_info_artist_info_component__WEBPACK_IMPORTED_MODULE_7__["ArtistInfoComponent"],
                 _containers_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_8__["ContactUsComponent"],
+                _containers_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_9__["AboutUsComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -291,6 +305,50 @@ var ArtistInfoComponent = /** @class */ (function () {
         })
     ], ArtistInfoComponent);
     return ArtistInfoComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/containers/about-us/about-us.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/containers/about-us/about-us.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbnRhaW5lcnMvYWJvdXQtdXMvYWJvdXQtdXMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/containers/about-us/about-us.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/containers/about-us/about-us.component.ts ***!
+  \***********************************************************/
+/*! exports provided: AboutUsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutUsComponent", function() { return AboutUsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AboutUsComponent = /** @class */ (function () {
+    function AboutUsComponent() {
+    }
+    AboutUsComponent.prototype.ngOnInit = function () {
+    };
+    AboutUsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'about-us',
+            template: __webpack_require__(/*! raw-loader!./about-us.component.html */ "./node_modules/raw-loader/index.js!./src/app/containers/about-us/about-us.component.html"),
+            styles: [__webpack_require__(/*! ./about-us.component.css */ "./src/app/containers/about-us/about-us.component.css")]
+        })
+    ], AboutUsComponent);
+    return AboutUsComponent;
 }());
 
 
@@ -446,7 +504,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Kiran\Documents\official333am-web\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\rohit\Documents\GitHub\official333am-web\src\main.ts */"./src/main.ts");
 
 
 /***/ })
