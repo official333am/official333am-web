@@ -45,6 +45,17 @@ module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    <di
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/artist-info/artist-info.component.html":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/artist-info/artist-info.component.html ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    can we get some artist info?\n  </div>\n</div>\n"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/containers/artists/artists.component.html":
 /*!*************************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/containers/artists/artists.component.html ***!
@@ -52,7 +63,7 @@ module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    <di
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">THIS BUTTON IS USELESS</button>\r\n</div>\r\n\r\n<artist-cards></artist-cards>"
+module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">THIS BUTTON IS USELESS</button>\r\n</div>\r\n\r\n<artist-cards></artist-cards>\r\n\r\n<artist-info></artist-info>"
 
 /***/ }),
 
@@ -149,6 +160,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/artists/artists.component */ "./src/app/containers/artists/artists.component.ts");
 /* harmony import */ var _components_artist_cards_artist_cards_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/artist-cards/artist-cards.component */ "./src/app/components/artist-cards/artist-cards.component.ts");
+/* harmony import */ var _components_artist_info_artist_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/artist-info/artist-info.component */ "./src/app/components/artist-info/artist-info.component.ts");
+
 
 
 
@@ -164,7 +177,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__["ArtistsComponent"],
-                _components_artist_cards_artist_cards_component__WEBPACK_IMPORTED_MODULE_6__["ArtistCardsComponent"]
+                _components_artist_cards_artist_cards_component__WEBPACK_IMPORTED_MODULE_6__["ArtistCardsComponent"],
+                _components_artist_info_artist_info_component__WEBPACK_IMPORTED_MODULE_7__["ArtistInfoComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -219,6 +233,50 @@ var ArtistCardsComponent = /** @class */ (function () {
         })
     ], ArtistCardsComponent);
     return ArtistCardsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/artist-info/artist-info.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/artist-info/artist-info.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYXJ0aXN0LWluZm8vYXJ0aXN0LWluZm8uY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/artist-info/artist-info.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/artist-info/artist-info.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: ArtistInfoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArtistInfoComponent", function() { return ArtistInfoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ArtistInfoComponent = /** @class */ (function () {
+    function ArtistInfoComponent() {
+    }
+    ArtistInfoComponent.prototype.ngOnInit = function () {
+    };
+    ArtistInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'artist-info',
+            template: __webpack_require__(/*! raw-loader!./artist-info.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/artist-info/artist-info.component.html"),
+            styles: [__webpack_require__(/*! ./artist-info.component.css */ "./src/app/components/artist-info/artist-info.component.css")]
+        })
+    ], ArtistInfoComponent);
+    return ArtistInfoComponent;
 }());
 
 
