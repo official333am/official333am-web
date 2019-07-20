@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE\r\n  </h1>\r\n  <h2>\r\n    ROHITH'S BRANCH MADE THIS UPDATE\r\n  </h2>\r\n</div>\r\n\r\n<artists></artists>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULTIMEDIA COLLECTIVE\r\n  </h1>\r\n  <h2>\r\n    Testing that master can't be pushed to\r\n  </h2>\r\n</div>\r\n\r\n<artists></artists>\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
