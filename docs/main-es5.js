@@ -41,7 +41,7 @@ module.exports = "<div style=\"text-align:center\">\r\n  <h1>\r\n    3:33AM MULT
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">WELCOME TO MY HOUSE</button>\r\n</div>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n    <button class=\"btn btn-primary\" type=\"submit\">WELCOME TO MY CASA</button>\r\n</div>\r\n"
 
 /***/ }),
 
