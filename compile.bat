@@ -1,1 +1,1 @@
-ng build  --prod --base-href 'https://official333am.com/' && copy CNAME "docs" && git add . && git commit -m "update - %date% %time%" && git fetch && git push
+ng build && copy CNAME "docs" && git add . && git commit -m "update - %date% %time%" && git fetch && git push
