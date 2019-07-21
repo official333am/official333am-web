@@ -45,7 +45,11 @@ export class FirebaseService {
         name: element.id,
         type: element.data().type,
         description: element.data().description,
-        spotify: element.data().spotify
+        spotify: element.data().spotify,
+        apple: element.data().apple,
+        facebook: element.data().facebook,
+        twitter: element.data().twitter,
+        instagram: element.data().instagram
       });
     });
 
