@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+.fa-spotify {
+  font-size: 30px;
+  color: #1db954;
+  cursor: pointer;
+}
+
+.fa-apple {
+  font-size: 30px;
+  color: #999999;
+  cursor: pointer;
+}
+
+.fa-facebook-official {
+  font-size: 30px;
+  color: #3b5998;
+  cursor: pointer;
+}
+
+.fa-twitter {
+  font-size: 30px;
+  color: #1da1f2;
+  cursor: pointer;
+}
+
+.fa-instagram {
+  font-size: 30px;
+  color: #c13584;
+  cursor: pointer;
+}

@@ -1,29 +1,57 @@
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
-
-<div *ngIf="firebaseArtists && firebaseArtists.length !== 0">
+<div *ngIf="firebaseArtists">
   <div class="container">
     <div class="row">
       <div class="col-md-4" *ngFor="let artist of firebaseArtists">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{ artist.name }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">
+            <h5 *ngIf="artist.name" class="card-title">
+              {{ artist.name }}
+            </h5>
+            <h6 *ngIf="artist.type" class="card-subtitle mb-2 text-muted">
               {{ artist.type }}
             </h6>
-            <p class="card-text">
+            <p *ngIf="artist.description" class="card-text">
               {{ artist.description }}
             </p>
-            <a href="#" class="card-link">
-              <i
-                class="fa fa-spotify"
-                style="font-size:30px;color:green"
-                data-toggle="modal"
-                data-target="#exampleModal"
-                (click)="openSpotifyModal(artist.spotify)"
-              >
+            <i
+              *ngIf="artist.spotify"
+              class="fa fa-spotify"
+              data-toggle="modal"
+              data-target="#spotifyModal"
+              (click)="openSpotifyModal(artist.spotify)"
+            >
+              &nbsp;
+            </i>
+            <a *ngIf="artist.apple" href="{{ artist.apple }}" target="_blank">
+              <i class="fa fa-apple">
+                &nbsp;
+              </i>
+            </a>
+            <a
+              *ngIf="artist.facebook"
+              href="{{ artist.facebook }}"
+              target="_blank"
+            >
+              <i class="fa fa-facebook-official">
+                &nbsp;
+              </i>
+            </a>
+            <a
+              *ngIf="artist.twitter"
+              href="{{ artist.twitter }}"
+              target="_blank"
+            >
+              <i class="fa fa-twitter">
+                &nbsp;
+              </i>
+            </a>
+            <a
+              *ngIf="artist.instagram"
+              href="{{ artist.instagram }}"
+              target="_blank"
+            >
+              <i class="fa fa-instagram">
+                &nbsp;
               </i>
             </a>
           </div>
@@ -33,13 +61,24 @@
   </div>
 </div>
 
+<div *ngIf="!firebaseArtists">
+  <div class="container">
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    ></span>
+    Loading...
+  </div>
+</div>
+
 <!-- Modal -->
 <div
   class="modal fade"
-  id="exampleModal"
+  id="spotifyModal"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="exampleModalLabel"
+  aria-labelledby="spotifyModalLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog" role="document">
