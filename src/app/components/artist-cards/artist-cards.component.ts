@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import * as firebase from "firebase/app";
 import "firebase/firestore";
+// import "firebase/auth"
 
 @Component({
   selector: "artist-cards",
@@ -9,10 +10,12 @@ import "firebase/firestore";
   styleUrls: ["./artist-cards.component.css"]
 })
 export class ArtistCardsComponent implements OnInit {
-  firebaseArtists = ["artists"];
+  firebaseArtists = ["test"];
   url: any;
 
-  constructor(public sanitizer: DomSanitizer) {}
+  constructor(public sanitizer: DomSanitizer) {
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://open.spotify.com/embed/artist/2nnK1MYUbTKOKXhJbIXpiW");
+  }
 
   ngOnInit() {
     var firebaseConfig = {
@@ -32,8 +35,23 @@ export class ArtistCardsComponent implements OnInit {
     db.collection("artists")
       .get()
       .then(function(querySnapshot) {
-        this.firebaseArtists = querySnapshot.docs;
+        this.firebaseArtists = this.formatSnapshot(querySnapshot.docs);
       }.bind(this));
+  }
+
+  formatSnapshot(array: any[]) {
+    var returnArray = [];
+
+    array.forEach(function(element) {
+      returnArray.push({
+        name: element.id,
+        type: element.data().type,
+        description: element.data().description,
+        spotify: element.data().spotify
+      })
+    });
+
+    return returnArray;
   }
 
   openSpotifyModal(uri: string) {
