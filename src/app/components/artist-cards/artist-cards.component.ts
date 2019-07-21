@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import * as firebase from "firebase/app";
 import "firebase/firestore";
 
@@ -9,8 +10,9 @@ import "firebase/firestore";
 })
 export class ArtistCardsComponent implements OnInit {
   firebaseArtists = ["artists"];
+  url: any;
 
-  constructor() {}
+  constructor(public sanitizer: DomSanitizer) {}
 
   ngOnInit() {
     var firebaseConfig = {
@@ -32,5 +34,9 @@ export class ArtistCardsComponent implements OnInit {
       .then(function(querySnapshot) {
         this.firebaseArtists = querySnapshot.docs;
       }.bind(this));
+  }
+
+  openSpotifyModal(uri: string) {
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://open.spotify.com/embed/artist/" + uri);
   }
 }
