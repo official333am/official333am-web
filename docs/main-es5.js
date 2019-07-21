@@ -41,7 +41,7 @@ module.exports = "<nav id=\"navbar-example2\" class=\"navbar navbar-light bg-lig
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link\r\n  rel=\"stylesheet\"\r\n  href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\"\r\n/>\r\n<div *ngIf=\"firebaseArtists && firebaseArtists.length !== 0\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\" *ngFor=\"let artist of firebaseArtists\">\r\n        <div class=\"card\">\r\n          <div class=\"card-body\">\r\n            <h5 class=\"card-title\">{{ artist.id }}</h5>\r\n            <h6 class=\"card-subtitle mb-2 text-muted\">\r\n              {{ artist.data().type }}\r\n            </h6>\r\n            <p class=\"card-text\">\r\n              {{ artist.data().description }}\r\n            </p>\r\n            <a href=\"#\" class=\"card-link\">\r\n              <i\r\n                class=\"fa fa-spotify\"\r\n                style=\"font-size:30px;color:green\"\r\n                data-toggle=\"modal\"\r\n                data-target=\"#exampleModal\"\r\n                (click)=\"openSpotifyModal(artist.data().spotify)\"\r\n              >\r\n              </i>\r\n            </a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  id=\"exampleModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"exampleModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-body\">\r\n        <iframe\r\n          [src]=\"url\"\r\n          width=\"100%\"\r\n          height=\"380\"\r\n          frameborder=\"0\"\r\n          allowtransparency=\"true\"\r\n          allow=\"encrypted-media\"\r\n        ></iframe>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<link\r\n  rel=\"stylesheet\"\r\n  href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\"\r\n/>\r\n<div *ngIf=\"firebaseArtists && firebaseArtists.length !== 0\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\" *ngFor=\"let artist of firebaseArtists\">\r\n        <div class=\"card\">\r\n          <div class=\"card-body\">\r\n            <h5 class=\"card-title\">{{ artist.name }}</h5>\r\n            <h6 class=\"card-subtitle mb-2 text-muted\">\r\n              {{ artist.type }}\r\n            </h6>\r\n            <p class=\"card-text\">\r\n              {{ artist.description }}\r\n            </p>\r\n            <a href=\"#\" class=\"card-link\">\r\n              <i\r\n                class=\"fa fa-spotify\"\r\n                style=\"font-size:30px;color:green\"\r\n                data-toggle=\"modal\"\r\n                data-target=\"#exampleModal\"\r\n                (click)=\"openSpotifyModal(artist.spotify)\"\r\n              >\r\n              </i>\r\n            </a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  id=\"exampleModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"exampleModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-body\">\r\n        <iframe\r\n          [src]=\"url\"\r\n          width=\"100%\"\r\n          height=\"380\"\r\n          frameborder=\"0\"\r\n          allowtransparency=\"true\"\r\n          allow=\"encrypted-media\"\r\n        ></iframe>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -85,7 +85,7 @@ module.exports = "<div class=\"container\">\n  <h3>\n    ABOUT US\n  </h3>\n\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\">\r\n    <h3>\r\n      ARTISTS\r\n    </h3>\r\n  </div>\r\n</div>\r\n\r\n<br>\r\n<artist-cards></artist-cards>\r\n<br>\r\n<artist-info></artist-info>\r\n<br>\r\n"
+module.exports = "<div class=\"container\">\r\n  <h3>\r\n    ARTISTS\r\n  </h3>\r\n</div>\r\n\r\n<br />\r\n<artist-cards></artist-cards>\r\n<br />\r\n<artist-info></artist-info>\r\n<br />\r\n"
 
 /***/ }),
 
@@ -269,10 +269,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import "firebase/auth"
 var ArtistCardsComponent = /** @class */ (function () {
     function ArtistCardsComponent(sanitizer) {
         this.sanitizer = sanitizer;
-        this.firebaseArtists = ["artists"];
+        this.firebaseArtists = ["test"];
+        this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://open.spotify.com/embed/artist/2nnK1MYUbTKOKXhJbIXpiW");
     }
     ArtistCardsComponent.prototype.ngOnInit = function () {
         var firebaseConfig = {
@@ -289,8 +291,20 @@ var ArtistCardsComponent = /** @class */ (function () {
         db.collection("artists")
             .get()
             .then(function (querySnapshot) {
-            this.firebaseArtists = querySnapshot.docs;
+            this.firebaseArtists = this.formatSnapshot(querySnapshot.docs);
         }.bind(this));
+    };
+    ArtistCardsComponent.prototype.formatSnapshot = function (array) {
+        var returnArray = [];
+        array.forEach(function (element) {
+            returnArray.push({
+                name: element.id,
+                type: element.data().type,
+                description: element.data().description,
+                spotify: element.data().spotify
+            });
+        });
+        return returnArray;
     };
     ArtistCardsComponent.prototype.openSpotifyModal = function (uri) {
         this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://open.spotify.com/embed/artist/" + uri);
