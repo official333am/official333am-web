@@ -41,7 +41,7 @@ module.exports = "<nav id=\"navbar-example2\" class=\"navbar navbar-light bg-lig
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    <div class=\"card\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">Stretch Dynamo</h5>\n        <h6 class=\"card-subtitle mb-2 text-muted\">Rapper</h6>\n        <p class=\"card-text\">\n          This is a sample card for rapper Stretch Baby Rays\n        </p>\n        <a href=\"#\" class=\"card-link\">Card link</a>\n        <a href=\"#\" class=\"card-link\">Another link</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"firebaseArtists && firebaseArtists.length !== 0\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-4\" *ngFor=\"let artist of firebaseArtists\">\n          <div class=\"card\">\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">{{ artist.id }}</h5>\n              <h6 class=\"card-subtitle mb-2 text-muted\">{{ artist.data().type }}</h6>\n              <p class=\"card-text\">\n                  {{ artist.data().description }}\n              </p>\n              <a href=\"#\" class=\"card-link\">Card link</a>\n              <a href=\"#\" class=\"card-link\">Another link</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -63,7 +63,7 @@ module.exports = "<div class=\"container\">\n  <div class=\"bd-example\">\n    <
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\">\n    can we get some artist info?\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"col-md-3\"></div>\n</div>\n"
 
 /***/ }),
 
@@ -260,16 +260,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArtistCardsComponent", function() { return ArtistCardsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/firestore */ "./node_modules/firebase/firestore/dist/index.esm.js");
+
+
 
 
 var ArtistCardsComponent = /** @class */ (function () {
     function ArtistCardsComponent() {
+        this.firebaseArtists = ["artists"];
     }
     ArtistCardsComponent.prototype.ngOnInit = function () {
+        var firebaseConfig = {
+            apiKey: "AIzaSyBm8EcIVsLZCMAFdBRyMaMX6ICjI5-t9gc",
+            authDomain: "official333am-web.firebaseapp.com",
+            databaseURL: "https://official333am-web.firebaseio.com",
+            projectId: "official333am-web",
+            storageBucket: "",
+            messagingSenderId: "539727915084",
+            appId: "1:539727915084:web:7494c564765a0965"
+        };
+        firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig);
+        var db = firebase_app__WEBPACK_IMPORTED_MODULE_2__["firestore"]();
+        db.collection("artists")
+            .get()
+            .then(function (querySnapshot) {
+            this.firebaseArtists = querySnapshot.docs;
+        }.bind(this));
     };
     ArtistCardsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'artist-cards',
+            selector: "artist-cards",
             template: __webpack_require__(/*! raw-loader!./artist-cards.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/artist-cards/artist-cards.component.html"),
             styles: [__webpack_require__(/*! ./artist-cards.component.css */ "./src/app/components/artist-cards/artist-cards.component.css")]
         })
@@ -348,6 +370,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArtistInfoComponent", function() { return ArtistInfoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/firestore */ "./node_modules/firebase/firestore/dist/index.esm.js");
+
 
 
 var ArtistInfoComponent = /** @class */ (function () {
@@ -357,7 +381,7 @@ var ArtistInfoComponent = /** @class */ (function () {
     };
     ArtistInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'artist-info',
+            selector: "artist-info",
             template: __webpack_require__(/*! raw-loader!./artist-info.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/artist-info/artist-info.component.html"),
             styles: [__webpack_require__(/*! ./artist-info.component.css */ "./src/app/components/artist-info/artist-info.component.css")]
         })
