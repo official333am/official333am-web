@@ -1,50 +1,80 @@
-<nav id="navbar-example2" class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href=""><h1>3:33AM MULTIMEDIA COLLECTIVE</h1></a>
-  <ul class="nav nav-pills">
-    <li class="nav-item"><a class="nav-link" href="#artists">ARTISTS</a></li>
-    <li class="nav-item"><a class="nav-link" href="#about-us">ABOUT US</a></li>
-    <li class="nav-item">
-      <a class="nav-link" href="#contact-us">CONTACT US</a>
-    </li>
-    <!--
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          data-toggle="dropdown"
-          href="#"
-          role="button"
-          aria-haspopup="true"
-          aria-expanded="false"
-          >MORE</a
-        >
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#one">USELESS 1</a>
-          <a class="dropdown-item" href="#two">USELESS 2</a>
-          <div role="separator" class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#three">USELESS 3</a>
-        </div>
-      </li>
-    -->
-  </ul>
-</nav>
-<body>
-  <!-- <artist-carousel></artist-carousel>
+<!-- <div class="row">
+  <div class="col-md-12">
+    <nav id="navbar-example2" class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href=""><h1>3:33AM MULTIMEDIA COLLECTIVE</h1></a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#artists">ARTISTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-us">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact-us">CONTACT US</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>   -->
 
-  <iframe
-    src="https://open.spotify.com/embed/artist/2nnK1MYUbTKOKXhJbIXpiW"
-    width="300"
-    height="380"
-    frameborder="0"
-    allowtransparency="true"
-    allow="encrypted-media"
-  ></iframe> -->
-  <br>
+<!--Main Navigation-->
+<header>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg scrolling-navbar">
+    <strong class="header nav-right" style="color: white">
+      3:33AM MULTIMEDIA COLLECTIVE
+    </strong>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="fa fa-bars" style="color:white"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto flex-direction">
+        <li class="nav-item nav-tab">
+          <a class="nav-link" href="#artists">ARTISTS</a>
+        </li>
+        <li class="nav-item nav-tab">
+          <a class="nav-link" href="#about-us">ABOUT US</a>
+        </li>
+        <li class="nav-item nav-tab">
+          <a class="nav-link" href="#contact-us">CONTACT US</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-direction">
+        <li class="nav-item nav-tab">
+          <a class="nav-link"
+            ><i class="fa fa-facebook-official" style="color:white"></i
+          ></a>
+        </li>
+        <li class="nav-item nav-tab">
+          <a class="nav-link"
+            ><i class="fa fa-twitter" style="color:white"></i
+          ></a>
+        </li>
+        <li class="nav-item nav-tab">
+          <a class="nav-link"
+            ><i class="fa fa-instagram" style="color:white"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <br />
   <artists id="artists"></artists>
-  <br>
+  <br />
   <about-us id="about-us"></about-us>
-  <br>
+  <br />
   <contact-us id="contact-us"></contact-us>
-  <br>
-</body>
+  <br />
+</main>
 
 <router-outlet></router-outlet>
