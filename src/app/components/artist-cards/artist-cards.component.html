@@ -22,55 +22,45 @@
 <br />
 <div *ngIf="searchResults">
   <div class="container">
-    <div class="row horiz-scroll">
-      <div
-        class="col-md-4"
-        style="margin-bottom: 30px;"
-        *ngFor="let artist of searchResults"
-      >
-        <div class="card">
-          <div class="card-body">
-            <h5 *ngIf="artist.name" class="card-title">{{ artist.name }}</h5>
-            <h6 *ngIf="artist.type" class="card-subtitle mb-2 text-muted">
-              {{ artist.type }}
-            </h6>
-            <p *ngIf="artist.description" class="card-text">
-              {{ artist.description }}
-            </p>
-            <i
-              *ngIf="artist.spotify"
-              class="fa fa-spotify"
-              data-toggle="modal"
-              data-target="#spotifyModal"
-              (click)="openSpotifyModal(artist.spotify)"
-            >
-              &nbsp;
-            </i>
-            <a *ngIf="artist.apple" href="{{ artist.apple }}" target="_blank">
-              <i class="fa fa-apple"> &nbsp; </i>
-            </a>
-            <a
-              *ngIf="artist.facebook"
-              href="{{ artist.facebook }}"
-              target="_blank"
-            >
-              <i class="fa fa-facebook-official"> &nbsp; </i>
-            </a>
-            <a
-              *ngIf="artist.twitter"
-              href="{{ artist.twitter }}"
-              target="_blank"
-            >
-              <i class="fa fa-twitter"> &nbsp; </i>
-            </a>
-            <a
-              *ngIf="artist.instagram"
-              href="{{ artist.instagram }}"
-              target="_blank"
-            >
-              <i class="fa fa-instagram"> &nbsp; </i>
-            </a>
-          </div>
+    <div class="horiz-scroll smooth-scroll list-unstyled">
+      <div class="card" *ngFor="let artist of searchResults">
+        <div class="card-body">
+          <h5 *ngIf="artist.name" class="card-title">{{ artist.name }}</h5>
+          <h6 *ngIf="artist.type" class="card-subtitle mb-2 text-muted">
+            {{ artist.type }}
+          </h6>
+          <p *ngIf="artist.description" class="card-text">
+            {{ artist.description }}
+          </p>
+          <i
+            *ngIf="artist.spotify"
+            class="fa fa-spotify"
+            data-toggle="modal"
+            data-target="#spotifyModal"
+            (click)="openSpotifyModal(artist.spotify)"
+          >
+            &nbsp;
+          </i>
+          <a *ngIf="artist.apple" href="{{ artist.apple }}" target="_blank">
+            <i class="fa fa-apple"> &nbsp; </i>
+          </a>
+          <a
+            *ngIf="artist.facebook"
+            href="{{ artist.facebook }}"
+            target="_blank"
+          >
+            <i class="fa fa-facebook-official"> &nbsp; </i>
+          </a>
+          <a *ngIf="artist.twitter" href="{{ artist.twitter }}" target="_blank">
+            <i class="fa fa-twitter"> &nbsp; </i>
+          </a>
+          <a
+            *ngIf="artist.instagram"
+            href="{{ artist.instagram }}"
+            target="_blank"
+          >
+            <i class="fa fa-instagram"> &nbsp; </i>
+          </a>
         </div>
       </div>
     </div>

@@ -1,8 +1,12 @@
 .horiz-scroll {
   overflow-x: scroll;
   overflow-y: hidden;
+  white-space: nowrap;
 
-  .cards {
-    display: inline-block;
-  }
+}
+.card{
+  white-space: pre-wrap;
+  display: inline-block;
+  width: 18rem;
+  height: 20rem;
 }
