@@ -639,9 +639,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\rohit\Documents\GitHub\official333am-web\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-__webpack_require__(/*! C:\Users\rohit\Documents\GitHub\official333am-web\node_modules\font-awesome\css\font-awesome.min.css */"./node_modules/font-awesome/css/font-awesome.min.css");
-module.exports = __webpack_require__(/*! C:\Users\rohit\Documents\GitHub\official333am-web\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\Users\Kiran\Documents\official333am-web\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! C:\Users\Kiran\Documents\official333am-web\node_modules\font-awesome\css\font-awesome.min.css */"./node_modules/font-awesome/css/font-awesome.min.css");
+module.exports = __webpack_require__(/*! C:\Users\Kiran\Documents\official333am-web\src\styles.css */"./src/styles.css");
 
 
 /***/ })
