@@ -1,7 +1,37 @@
-<div *ngIf="firebaseArtists">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h3>
+        ARTISTS
+      </h3>
+    </div>
+    <div class="offset-md-2"></div>
+    <div class="col-md-4">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button class="btn" type="button" (click)="updateSearch()">
+            <i class="fa fa-search" style="font-size: 20px;"> </i>
+          </button>
+        </div>
+        <input
+          id="searchBar"
+          type="text"
+          class="form-control"
+          placeholder="Search for artists..."
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="searchResults">
   <div class="container">
     <div class="row">
-      <div class="col-md-4" *ngFor="let artist of firebaseArtists">
+      <div
+        class="col-md-4"
+        style="margin-bottom: 30px;"
+        *ngFor="let artist of searchResults"
+      >
         <div class="card">
           <div class="card-body">
             <h5 *ngIf="artist.name" class="card-title">
@@ -61,7 +91,7 @@
   </div>
 </div>
 
-<div *ngIf="!firebaseArtists">
+<div *ngIf="!searchResults">
   <div class="container">
     <span
       class="spinner-border spinner-border-sm"
