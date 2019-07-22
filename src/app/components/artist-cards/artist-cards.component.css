@@ -1,0 +1,8 @@
+.horiz-scroll {
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  .cards {
+    display: inline-block;
+  }
+}
