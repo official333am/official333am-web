@@ -22,7 +22,7 @@
 <br />
 <div *ngIf="searchResults">
   <div class="container">
-    <div class="horiz-scroll smooth-scroll list-unstyled">
+    <div class="horiz-scroll">
       <div class="card" *ngFor="let artist of searchResults">
         <div class="card-body">
           <h5 *ngIf="artist.name" class="card-title">{{ artist.name }}</h5>
