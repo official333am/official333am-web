@@ -19,11 +19,11 @@
             id="searchButton"
             class="btn"
             style="padding-left: 0; cursor: pointer;"
-            (click)="showSearchBar()"
+            (click)="showSearchBar(); toggleIcon();"
           >
-            <i *ngIf="!showBar" class="fa fa-search" style="font-size: 20px; color: #343a40">
+            <i *ngIf="!flipButton" class="fa fa-search" style="font-size: 20px; color: #343a40">
             </i>
-            <i *ngIf="showBar" class="fa fa-times" style="font-size: 20px; color: #343a40">
+            <i *ngIf="flipButton" class="fa fa-times" style="font-size: 20px; color: #343a40">
               </i>
           </a>
         </div>
@@ -89,6 +89,12 @@
     Loading...
   </div>
 </div>
+
+<div *ngIf="searchResults && searchResults.length === 0">
+    <div class="container">
+      There are no artists that matched your search...
+    </div>
+  </div>
 
 <!-- Modal -->
 <div

@@ -13,6 +13,7 @@ export class ArtistCardsComponent implements OnInit {
   firebaseArtists: any;
   searchResults: any;
   showBar: boolean;
+  flipButton: boolean;
 
   constructor(
     public sanitizer: DomSanitizer,
@@ -24,11 +25,15 @@ export class ArtistCardsComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.showBar = false;
     this.firebaseArtists = await this.firebaseService.getArtists();
     this.searchResults = this.firebaseArtists;
 
-    // $("#searchBar").toggle("slide", "right", 500);
+    if ($(window).width() < 768) {
+      this.flipButton = false;
+      this.showBar = false;
+    } else {
+      this.showBar = true;
+    }
   }
 
   openSpotifyModal(uri: string) {
@@ -38,7 +43,7 @@ export class ArtistCardsComponent implements OnInit {
   }
 
   updateSearch() {
-    if ($("#searchBar").val() !== "") {
+    if ($("#searchBar").val() && $("#searchBar").val() !== "") {
       this.searchResults = this.firebaseArtists.filter(
         artist =>
           artist.name.toLowerCase().indexOf(
@@ -47,19 +52,51 @@ export class ArtistCardsComponent implements OnInit {
               .toLowerCase()
           ) > -1
       );
+      this.flipButton = true;
     } else {
       this.searchResults = this.firebaseArtists;
+
+      if ($(window).width() < 768 && this.flipButton) {
+        this.flipButton = false;
+      } else if ($(window).width() < 768) {
+        this.flipButton = true;
+      } else {
+        this.flipButton = false;
+      }
     }
   }
 
-  pressButton() {
-    // $("#searchBar").toggle("slide", "right", 500);
+  showSearchBar() {
+    if (
+      $("#searchBar").val() &&
+      $("#searchBar").val() !== "" &&
+      $(window).width() < 768
+    ) {
+      // does nothing...yet...
+    } else if ($(window).width() < 768) {
+      this.showBar = !this.showBar;
+
+      if (!this.showBar) {
+        this.searchResults = this.firebaseArtists;
+      }
+    }
   }
 
-  showSearchBar() {
-    this.showBar = !this.showBar;
+  toggleIcon() {
+    if (
+      $("#searchBar").val() &&
+      $("#searchBar").val() !== "" &&
+      $(window).width() < 768
+    ) {
+      this.flipButton = !this.flipButton;
+    }
 
-    if (!this.showBar) {
+    if (this.flipButton) {
+      this.flipButton = !this.flipButton;
+    }
+
+    if (!this.flipButton) {
+      $("#searchBar").val("");
       this.searchResults = this.firebaseArtists;
     }
   }
