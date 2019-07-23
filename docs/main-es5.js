@@ -278,7 +278,7 @@ var ArtistCardsComponent = /** @class */ (function () {
                 switch (_b.label) {
                     case 0:
                         _a = this;
-                        return [4 /*yield*/, this.firebaseService.getArtistsRealtime()];
+                        return [4 /*yield*/, this.firebaseService.getArtistsFirestore()];
                     case 1:
                         _a.firebaseArtists = _b.sent();
                         this.searchResults = this.firebaseArtists;

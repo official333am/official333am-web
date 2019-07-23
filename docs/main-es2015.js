@@ -264,7 +264,7 @@ let ArtistCardsComponent = class ArtistCardsComponent {
     }
     ngOnInit() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            this.firebaseArtists = yield this.firebaseService.getArtistsRealtime();
+            this.firebaseArtists = yield this.firebaseService.getArtistsFirestore();
             this.searchResults = this.firebaseArtists;
             if ($(window).width() < 768) {
                 this.flipButton = false;
