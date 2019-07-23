@@ -43,21 +43,21 @@
 
 ::-webkit-scrollbar-track
 {
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.3em;
+  height: 0.3em;
 	background-color: #ffffff;
 }
 
 ::-webkit-scrollbar
 {
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.3em;
+  height: 0.3em;
 	background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb
 {
-  width: 0.5em;
-  height: 0.5em;
-	background-color: #343a40;
+  width: 0.3em;
+  height: 0.3em;
+	background-color: #6c757d;
 }
