@@ -6,7 +6,7 @@
 }
 
 .card{
-  white-space: pre-wrap;
+  white-space: pre-line;
   display: inline-block;
   width: 18rem;
   height: 20rem;
