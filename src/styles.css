@@ -58,3 +58,7 @@
   height: 0.3em;
   background-color: #6c757d;
 }
+
+.bg-dark {
+  background-color: black !important;
+}
