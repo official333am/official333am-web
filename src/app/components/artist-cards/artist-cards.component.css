@@ -13,3 +13,8 @@
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
+
+#searchBar {
+  float: right;
+  overflow: hidden;
+}

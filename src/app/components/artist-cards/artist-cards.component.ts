@@ -12,6 +12,7 @@ export class ArtistCardsComponent implements OnInit {
   url: SafeResourceUrl;
   firebaseArtists: any;
   searchResults: any;
+  showBar: boolean;
 
   constructor(
     public sanitizer: DomSanitizer,
@@ -23,8 +24,11 @@ export class ArtistCardsComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.showBar = false;
     this.firebaseArtists = await this.firebaseService.getArtists();
     this.searchResults = this.firebaseArtists;
+
+    // $("#searchBar").toggle("slide", "right", 500);
   }
 
   openSpotifyModal(uri: string) {
@@ -44,6 +48,18 @@ export class ArtistCardsComponent implements OnInit {
           ) > -1
       );
     } else {
+      this.searchResults = this.firebaseArtists;
+    }
+  }
+
+  pressButton() {
+    // $("#searchBar").toggle("slide", "right", 500);
+  }
+
+  showSearchBar() {
+    this.showBar = !this.showBar;
+
+    if (!this.showBar) {
       this.searchResults = this.firebaseArtists;
     }
   }

@@ -41,23 +41,20 @@
   padding-right: 24px;
 }
 
-::-webkit-scrollbar-track
-{
+::-webkit-scrollbar-track {
   width: 0.3em;
   height: 0.3em;
-	background-color: #ffffff;
+  background-color: #ffffff;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 0.3em;
   height: 0.3em;
-	background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   width: 0.3em;
   height: 0.3em;
-	background-color: #6c757d;
+  background-color: #6c757d;
 }
