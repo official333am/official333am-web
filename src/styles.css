@@ -40,3 +40,24 @@
 .nav-right {
   padding-right: 24px;
 }
+
+::-webkit-scrollbar-track
+{
+  width: 0.5em;
+  height: 0.5em;
+	background-color: #ffffff;
+}
+
+::-webkit-scrollbar
+{
+  width: 0.5em;
+  height: 0.5em;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  width: 0.5em;
+  height: 0.5em;
+	background-color: #343a40;
+}
