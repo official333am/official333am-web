@@ -44,7 +44,7 @@ export class ArtistCardsComponent implements OnInit {
           ) > -1
       );
     } else {
-      this.searchResults = this.firebaseArtists
+      this.searchResults = this.firebaseArtists;
     }
   }
 }
