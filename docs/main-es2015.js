@@ -264,7 +264,7 @@ let ArtistCardsComponent = class ArtistCardsComponent {
     }
     ngOnInit() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            this.firebaseArtists = yield this.firebaseService.getArtists();
+            this.firebaseArtists = yield this.firebaseService.getArtistsRealtime();
             this.searchResults = this.firebaseArtists;
             if ($(window).width() < 768) {
                 this.flipButton = false;
@@ -611,13 +611,23 @@ let FirebaseService = class FirebaseService {
             messagingSenderId: "539727915084",
             appId: "1:539727915084:web:7494c564765a0965"
         };
-        this.db = firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig).firestore();
+        this.firestore = firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig).firestore();
+        this.realtime = firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig).database();
     }
-    getArtists() {
-        return new Promise(function (resolve, reject) {
-            this.db
+    getArtistsFirestore() {
+        return new Promise(function (resolve) {
+            this.firestore
                 .collection("artists")
                 .get()
+                .then(function (querySnapshot) {
+                resolve(this.formatSnapshot(querySnapshot.docs));
+            }.bind(this));
+        }.bind(this));
+    }
+    getArtistsRealtime() {
+        return new Promise(function (resolve) {
+            this.realtime
+                .ref('/artists/')
                 .then(function (querySnapshot) {
                 resolve(this.formatSnapshot(querySnapshot.docs));
             }.bind(this));

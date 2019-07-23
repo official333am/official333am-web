@@ -6,7 +6,8 @@ import "firebase/firestore";
   providedIn: "root"
 })
 export class FirebaseService {
-  db: firebase.firestore.Firestore;
+  firestore: firebase.firestore.Firestore;
+  realtime: any;
 
   constructor() {
     var firebaseConfig = {
@@ -19,15 +20,30 @@ export class FirebaseService {
       appId: "1:539727915084:web:7494c564765a0965"
     };
 
-    this.db = firebase.initializeApp(firebaseConfig).firestore();
+    this.firestore = firebase.initializeApp(firebaseConfig).firestore();
+    this.realtime = firebase.initializeApp(firebaseConfig).database();
   }
 
-  getArtists(): Promise<{}> {
+  getArtistsFirestore(): Promise<{}> {
     return new Promise(
-      function(resolve, reject) {
-        this.db
+      function(resolve) {
+        this.firestore
           .collection("artists")
           .get()
+          .then(
+            function(querySnapshot) {
+              resolve(this.formatSnapshot(querySnapshot.docs));
+            }.bind(this)
+          );
+      }.bind(this)
+    );
+  }
+
+  getArtistsRealtime(): Promise<{}> {
+    return new Promise(
+      function(resolve) {
+        this.realtime
+          .ref('/artists/')
           .then(
             function(querySnapshot) {
               resolve(this.formatSnapshot(querySnapshot.docs));

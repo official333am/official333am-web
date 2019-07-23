@@ -278,7 +278,7 @@ var ArtistCardsComponent = /** @class */ (function () {
                 switch (_b.label) {
                     case 0:
                         _a = this;
-                        return [4 /*yield*/, this.firebaseService.getArtists()];
+                        return [4 /*yield*/, this.firebaseService.getArtistsRealtime()];
                     case 1:
                         _a.firebaseArtists = _b.sent();
                         this.searchResults = this.firebaseArtists;
@@ -643,13 +643,23 @@ var FirebaseService = /** @class */ (function () {
             messagingSenderId: "539727915084",
             appId: "1:539727915084:web:7494c564765a0965"
         };
-        this.db = firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig).firestore();
+        this.firestore = firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig).firestore();
+        this.realtime = firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig).database();
     }
-    FirebaseService.prototype.getArtists = function () {
-        return new Promise(function (resolve, reject) {
-            this.db
+    FirebaseService.prototype.getArtistsFirestore = function () {
+        return new Promise(function (resolve) {
+            this.firestore
                 .collection("artists")
                 .get()
+                .then(function (querySnapshot) {
+                resolve(this.formatSnapshot(querySnapshot.docs));
+            }.bind(this));
+        }.bind(this));
+    };
+    FirebaseService.prototype.getArtistsRealtime = function () {
+        return new Promise(function (resolve) {
+            this.realtime
+                .ref('/artists/')
                 .then(function (querySnapshot) {
                 resolve(this.formatSnapshot(querySnapshot.docs));
             }.bind(this));

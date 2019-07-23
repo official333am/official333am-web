@@ -25,7 +25,7 @@ export class ArtistCardsComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.firebaseArtists = await this.firebaseService.getArtists();
+    this.firebaseArtists = await this.firebaseService.getArtistsRealtime();
     this.searchResults = this.firebaseArtists;
 
     if ($(window).width() < 768) {
