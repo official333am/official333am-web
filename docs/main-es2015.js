@@ -264,7 +264,7 @@ let ArtistCardsComponent = class ArtistCardsComponent {
     }
     ngOnInit() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            this.firebaseArtists = yield this.firebaseService.getArtistsFirestore();
+            this.firebaseArtists = yield this.firebaseService.getArtistsRealtime();
             this.searchResults = this.firebaseArtists;
             if ($(window).width() < 768) {
                 this.flipButton = false;
@@ -595,7 +595,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/firestore */ "./node_modules/firebase/firestore/dist/index.esm.js");
+/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/index.esm.js");
 
 
 
@@ -611,43 +611,19 @@ let FirebaseService = class FirebaseService {
             messagingSenderId: "539727915084",
             appId: "1:539727915084:web:7494c564765a0965"
         };
-        this.firestore = firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig).firestore();
         this.realtime = firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](firebaseConfig).database();
-    }
-    getArtistsFirestore() {
-        return new Promise(function (resolve) {
-            this.firestore
-                .collection("artists")
-                .get()
-                .then(function (querySnapshot) {
-                resolve(this.formatSnapshot(querySnapshot.docs));
-            }.bind(this));
-        }.bind(this));
     }
     getArtistsRealtime() {
         return new Promise(function (resolve) {
             this.realtime
-                .ref('/artists/')
-                .then(function (querySnapshot) {
-                resolve(this.formatSnapshot(querySnapshot.docs));
-            }.bind(this));
-        }.bind(this));
-    }
-    formatSnapshot(artists) {
-        var artistsArray = [];
-        artists.forEach(function (element) {
-            artistsArray.push({
-                name: element.id,
-                type: element.data().type,
-                description: element.data().description,
-                spotify: element.data().spotify,
-                apple: element.data().apple,
-                facebook: element.data().facebook,
-                twitter: element.data().twitter,
-                instagram: element.data().instagram
+                .ref('/artists/').once('value', function (snapshot) {
+                var array = [];
+                snapshot.forEach(function (_child) {
+                    array.push(_child.val());
+                });
+                resolve(array);
             });
-        });
-        return artistsArray;
+        }.bind(this));
     }
 };
 FirebaseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
