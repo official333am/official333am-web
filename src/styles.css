@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* global font-awesome icon edits */
 .fa-spotify {
   font-size: 30px;
   color: #1db954;
@@ -29,6 +29,7 @@
   cursor: pointer;
 }
 
+/* customization for nav bar and possibly other things */
 .flex-direction {
   flex-direction: row;
 }
@@ -41,6 +42,11 @@
   padding-right: 24px;
 }
 
+.bg-dark {
+  background-color: black !important;
+}
+
+/* iOS smooth scrolling */
 ::-webkit-scrollbar-track {
   width: 0.3em;
   height: 0.3em;
@@ -57,8 +63,4 @@
   width: 0.3em;
   height: 0.3em;
   background-color: #6c757d;
-}
-
-.bg-dark {
-  background-color: black !important;
 }

@@ -19,12 +19,20 @@
             id="searchButton"
             class="btn"
             style="padding-left: 0; cursor: pointer;"
-            (click)="showSearchBar(); toggleIcon();"
+            (click)="showSearchBar(); toggleIcon()"
           >
-            <i *ngIf="!flipButton" class="fa fa-search" style="font-size: 20px; color: #343a40">
+            <i
+              *ngIf="!flipButton"
+              class="fa fa-search"
+              style="font-size: 20px; color: #343a40"
+            >
             </i>
-            <i *ngIf="flipButton" class="fa fa-times" style="font-size: 20px; color: #343a40">
-              </i>
+            <i
+              *ngIf="flipButton"
+              class="fa fa-times"
+              style="font-size: 20px; color: #343a40"
+            >
+            </i>
           </a>
         </div>
       </div>
@@ -36,6 +44,10 @@
   <div class="container">
     <div class="horiz-scroll">
       <div class="card" *ngFor="let artist of searchResults">
+        <img class="card-img-top" 
+          src="../../../assets/img/{{ artist.profile_picture }}" 
+          style="width: 286px; height: 180px;" 
+          alt="{{ artist.name }}" />
         <div class="card-body">
           <h5 *ngIf="artist.name" class="card-title">{{ artist.name }}</h5>
           <h6 *ngIf="artist.type" class="card-subtitle mb-2 text-muted">
@@ -91,10 +103,10 @@
 </div>
 
 <div *ngIf="searchResults && searchResults.length === 0">
-    <div class="container">
-      There are no artists that matched your search...
-    </div>
+  <div class="container">
+    There are no artists that matched your search...
   </div>
+</div>
 
 <!-- Modal -->
 <div
