@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { SafeResourceUrl, DomSanitizer } from "@angular/platform-browser";
 import { FirebaseService } from "../../services/firebase/firebase.service";
 declare var $: any;
@@ -9,11 +9,20 @@ declare var $: any;
   styleUrls: ["./artist-cards.component.css"]
 })
 export class ArtistCardsComponent implements OnInit {
+  @Input() showIcons: number;
+
   url: SafeResourceUrl;
   firebaseArtists: any;
   searchResults: any;
   showBar: boolean;
   flipButton: boolean;
+  
+  editObject = {
+    id: undefined,
+    name: undefined,
+    type: undefined,
+    description: undefined
+  };
 
   constructor(
     public sanitizer: DomSanitizer,
@@ -99,5 +108,17 @@ export class ArtistCardsComponent implements OnInit {
       $("#searchBar").val("");
       this.searchResults = this.firebaseArtists;
     }
+  }
+
+  editArtist(id: number, artist: any) {
+    this.editObject.id = id,
+    this.editObject.name = artist.name;
+    this.editObject.type = artist.type;
+    this.editObject.description = artist.description;
+  }
+
+  updateArtist() {
+    this.firebaseService.updateArtist(this.editObject);
+    this.ngOnInit();
   }
 }

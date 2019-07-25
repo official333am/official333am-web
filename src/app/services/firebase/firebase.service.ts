@@ -22,17 +22,42 @@ export class FirebaseService {
     this.realtime = firebase.initializeApp(firebaseConfig).database();
   }
 
+  async authenticate(userAuth: any): Promise<{}> {
+    var array: any = await this.getArtistsRealtime();
+
+    for(var i=0; i<array.length; i++) {
+      if (userAuth.username === array[i].username && userAuth.password === array[i].password) {
+        return i;
+      }
+    }
+
+    return -1;
+  }
+
+  updateArtist(userInfo: any): Promise<{}> {
+    return new Promise(
+      function(resolve) {
+        this.realtime.ref("artists/" + userInfo.id).update({
+          name: userInfo.name,
+          type: userInfo.type,
+          description: userInfo.description
+        });
+
+        resolve(true);
+      }.bind(this)
+    );
+  }
+
   getArtistsRealtime(): Promise<{}> {
     return new Promise(
       function(resolve) {
-        this.realtime
-          .ref('/artists/').once('value', function(snapshot){
-            var array = [];
-            snapshot.forEach(function(_child){
-                array.push(_child.val());
-            });
+        this.realtime.ref("/artists/").once("value", function(snapshot) {
+          var array = [];
+          snapshot.forEach(function(_child) {
+            array.push(_child.val());
+          });
 
-            resolve(array);
+          resolve(array);
         });
       }.bind(this)
     );

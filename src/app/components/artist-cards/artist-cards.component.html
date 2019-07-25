@@ -43,13 +43,26 @@
 <div *ngIf="searchResults">
   <div class="container">
     <div class="horiz-scroll">
-      <div class="card" *ngFor="let artist of searchResults">
-        <img class="card-img-top" 
-          src="../../../assets/img/{{ artist.profile_picture }}" 
-          style="width: 286px; height: 180px;" 
-          alt="{{ artist.name }}" />
+      <div class="card" *ngFor="let artist of searchResults; index as i;">
+        <img
+          class="card-img-top"
+          src="../../../assets/img/{{ artist.profile_picture }}"
+          style="width: 286px; height: 180px;"
+          alt="{{ artist.name }}"
+        />
         <div class="card-body">
-          <h5 *ngIf="artist.name" class="card-title">{{ artist.name }}</h5>
+          <h5 *ngIf="artist.name" class="card-title">
+            {{ artist.name }}
+            <i
+              *ngIf="showIcons === i || showIcons === 0 || showIcons === 2"
+              style="cursor: pointer"
+              class="fa fa-edit"
+              data-toggle="modal"
+              data-target="#editArtistModal"
+              (click)="editArtist(i, artist)"
+            >
+            </i>
+          </h5>
           <h6 *ngIf="artist.type" class="card-subtitle mb-2 text-muted">
             {{ artist.type }}
           </h6>
@@ -111,6 +124,7 @@
 <!-- Modal -->
 <div
   class="modal fade"
+  style="margin-top: 5%;"
   id="spotifyModal"
   tabindex="-1"
   role="dialog"
@@ -128,6 +142,69 @@
           allowtransparency="true"
           allow="encrypted-media"
         ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  style="margin-top: 5%;"
+  id="editArtistModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="editArtistModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">EDIT ARTIST</h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">NAME</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="ENTER NAME"
+              [value]="editObject.name"
+              (input)="editObject.name = $event.target.value"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">TYPE</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="ENTER TYPE"
+              [value]="editObject.type"
+              (input)="editObject.type = $event.target.value"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">DESCRIPTION</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="ENTER DESCRIPTION"
+              [value]="editObject.description"
+              (input)="editObject.description = $event.target.value"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">
+          CLOSE
+        </button>
+        <button type="button" class="btn" data-dismiss="modal" (click)="updateArtist()">UPDATE</button>
       </div>
     </div>
   </div>
