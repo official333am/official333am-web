@@ -1,27 +1,24 @@
 <div class="container">
   <h3>
     ABOUT
+    <i
+      *ngIf="showIcons.auth === 'admin'"
+      style="cursor: pointer; font-size: 20px;"
+      class="fa fa-edit"
+      (click)="editField();"
+    ></i>
   </h3>
 
-  Contact us pages are often the go-to for a new visitor on a mission. It’s
-  where they go when they have a question and truly want to speak to an
-  individual at your organization. They exist to serve the user with the purpose
-  of providing the user with information on how they can get in touch with you.
-  The goal of every contact us page is to convert by clearly and effectively
-  presenting the method(s) of getting in touch with a company as quickly as
-  possible. Here are a few best practices that you should keep in mind when
-  putting together your next contact us page: Contact us pages are often the
-  go-to for a new visitor on a mission. It’s where they go when they have a
-  question and truly want to speak to an individual at your organization. They
-  exist to serve the user with the purpose of providing the user with
-  information on how they can get in touch with you. The goal of every contact
-  us page is to convert by clearly and effectively presenting the method(s) of
-  getting in touch with a company as quickly as possible. Here are a few best
-  practices that you should keep in mind when putting together your next contact
-  us page: Contact us pages are often the go-to for a new visitor on a mission.
-  It’s where they go when they have a question and truly want to speak to an
-  individual at your organization. They exist to serve the user with the purpose
-  of providing the user with information on how they can get in touch with you.
-  The goal of every contact us page is to convert by clearly and effectively
-  presenting.
+  <div *ngIf="!isEditable">
+    {{ aboutUsData }}
+  </div>
+  <textarea
+    *ngIf="isEditable"
+    rows="5"
+    style="width: 100%"
+    [value]="updatedField"
+    (input)="updatedField = $event.target.value">
+  </textarea>
+  <button *ngIf="isEditable" type="button" class="btn pull-right" (click)="updateEdit()">UPDATE</button>
+  <button *ngIf="isEditable" type="button" class="btn pull-right" (click)="closeEdit()">CLOSE</button>
 </div>

@@ -27,7 +27,10 @@ export class FirebaseService {
 
     for(var i=0; i<array.length; i++) {
       if (userAuth.username === array[i].username && userAuth.password === array[i].password) {
-        return i;
+        return {
+          username: array[i].username,
+          auth: array[i].auth
+        };
       }
     }
 
@@ -51,7 +54,7 @@ export class FirebaseService {
   getArtistsRealtime(): Promise<{}> {
     return new Promise(
       function(resolve) {
-        this.realtime.ref("/artists/").once("value", function(snapshot) {
+        this.realtime.ref("artists/").once("value", function(snapshot) {
           var array = [];
           snapshot.forEach(function(_child) {
             array.push(_child.val());
@@ -62,4 +65,27 @@ export class FirebaseService {
       }.bind(this)
     );
   }
+
+  genericSetter(key: string, update: string): Promise<{}> {
+    return new Promise(
+      function(resolve) {
+        this.realtime.ref(key + "/").update({
+          value: update
+        });
+
+        resolve(true);
+      }.bind(this)
+    );
+  }
+
+  genericGetter(key: string): Promise<{}> {
+    return new Promise(
+      function(resolve) {
+        this.realtime.ref(key + "/").once("value", function(snapshot) {
+          resolve(snapshot.val().value);
+        });
+      }.bind(this)
+    );
+  }
+
 }

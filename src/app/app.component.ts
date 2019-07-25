@@ -20,7 +20,10 @@ export class AppComponent {
   };
 
   constructor(public firebaseService: FirebaseService) {
-    this.showIcons = -1;
+    this.showIcons = {
+      username: 'none',
+      auth: 'basic'
+    };
   }
 
   async authorizeAdmin() {
@@ -28,6 +31,7 @@ export class AppComponent {
 
     if (await this.firebaseService.authenticate(this.userAuth) !== -1) {
       this.showIcons = await this.firebaseService.authenticate(this.userAuth);
+
       this.validLogin = true;
       this.closeEnabled = true;
       this.clearLogin();

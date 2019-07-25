@@ -43,7 +43,7 @@
 <div *ngIf="searchResults">
   <div class="container">
     <div class="horiz-scroll">
-      <div class="card" *ngFor="let artist of searchResults; index as i;">
+      <div class="card" *ngFor="let artist of searchResults">
         <img
           class="card-img-top"
           src="../../../assets/img/{{ artist.profile_picture }}"
@@ -54,7 +54,7 @@
           <h5 *ngIf="artist.name" class="card-title">
             {{ artist.name }}
             <i
-              *ngIf="showIcons === i || showIcons === 0 || showIcons === 2"
+              *ngIf="showIcons.username === artist.username || showIcons.auth === 'admin'"
               style="cursor: pointer"
               class="fa fa-edit"
               data-toggle="modal"

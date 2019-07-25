@@ -9,7 +9,7 @@ declare var $: any;
   styleUrls: ["./artist-cards.component.css"]
 })
 export class ArtistCardsComponent implements OnInit {
-  @Input() showIcons: number;
+  @Input() showIcons: any;
 
   url: SafeResourceUrl;
   firebaseArtists: any;

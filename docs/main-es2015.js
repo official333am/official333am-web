@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\r\n  <nav class=\"navbar navbar-dark bg-dark navbar-expand-lg scrolling-navbar\">\r\n    <strong class=\"header nav-right\" style=\"color: white\">\r\n      3:33AM MULTIMEDIA COLLECTIVE\r\n    </strong>\r\n    <div class=\"navbar-collapse\" id=\"navbarSupportedContent\">\r\n      <ul class=\"navbar-nav mr-auto flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#artists\">ARTISTS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#\">MUSIC</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#about-us\">ABOUT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#contact-us\">CONTACT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"#\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#adminModal\"\r\n            (click)=\"newLogin();\"\r\n            >ADMIN</a\r\n          >\r\n        </li>\r\n      </ul>\r\n      <ul class=\"navbar-nav flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-spotify\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-apple\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-facebook-official\" style=\"color:white\"\r\n              >&nbsp;</i\r\n            ></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-twitter\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-instagram\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n</header>\r\n\r\n<main>\r\n  <br />\r\n  <artists id=\"artists\" [showIcons]=\"showIcons\"></artists>\r\n  <br />\r\n  <about-us id=\"about-us\"></about-us>\r\n  <br />\r\n  <contact-us id=\"contact-us\"></contact-us>\r\n  <br />\r\n</main>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"adminModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"adminModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">ADMIN LOGIN</h5>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">USERNAME</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER USERNAME\"\r\n              (input)=\"userAuth.username = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.username\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">PASSWORD</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"password\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER PASSWORD\"\r\n              (input)=\"userAuth.password = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.password\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-1\"></div>\r\n          <small \r\n            class=\"col-sm-10\" \r\n            style=\"color: red\"\r\n            *ngIf=\"!validLogin && errorsEnabled\">\r\n            The username/password combination does exist in our records.\r\n          </small>\r\n          <div class=\"col-sm-1\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"disableErrors(); clearLogin();\">\r\n          CLOSE\r\n        </button>\r\n        <button \r\n          *ngIf=\"closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          data-dismiss=\"modal\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n        <button\r\n        *ngIf=\"!closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<header>\r\n  <nav class=\"navbar navbar-dark bg-dark navbar-expand-lg scrolling-navbar\">\r\n    <strong class=\"header nav-right\" style=\"color: white\">\r\n      3:33AM MULTIMEDIA COLLECTIVE\r\n    </strong>\r\n    <div class=\"navbar-collapse\" id=\"navbarSupportedContent\">\r\n      <ul class=\"navbar-nav mr-auto flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#artists\">ARTISTS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#\">MUSIC</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#about-us\">ABOUT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#contact-us\">CONTACT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"#\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#adminModal\"\r\n            (click)=\"newLogin();\"\r\n            >ADMIN</a\r\n          >\r\n        </li>\r\n      </ul>\r\n      <ul class=\"navbar-nav flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-spotify\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-apple\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-facebook-official\" style=\"color:white\"\r\n              >&nbsp;</i\r\n            ></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-twitter\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-instagram\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n</header>\r\n\r\n<main>\r\n  <br />\r\n  <artists id=\"artists\" [showIcons]=\"showIcons\"></artists>\r\n  <br />\r\n  <br />\r\n  <about-us id=\"about-us\" [showIcons]=\"showIcons\"></about-us>\r\n  <br />\r\n  <br />\r\n  <contact-us id=\"contact-us\" [showIcons]=\"showIcons\"></contact-us>\r\n  <br />\r\n  <br />\r\n  <br />\r\n  <br />\r\n  <br />\r\n</main>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"adminModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"adminModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">ADMIN LOGIN</h5>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">USERNAME</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER USERNAME\"\r\n              (input)=\"userAuth.username = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.username\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">PASSWORD</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"password\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER PASSWORD\"\r\n              (input)=\"userAuth.password = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.password\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-1\"></div>\r\n          <small \r\n            class=\"col-sm-10\" \r\n            style=\"color: red\"\r\n            *ngIf=\"!validLogin && errorsEnabled\">\r\n            The username/password combination does exist in our records.\r\n          </small>\r\n          <div class=\"col-sm-1\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"disableErrors(); clearLogin();\">\r\n          CLOSE\r\n        </button>\r\n        <button \r\n          *ngIf=\"closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          data-dismiss=\"modal\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n        <button\r\n        *ngIf=\"!closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "<header>\r\n  <nav class=\"navbar navbar-dark bg-dark navbar-e
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-3 col-md-6\"><h3>ARTISTS</h3></div>\r\n    <div class=\"offset-2 offset-md-2\"></div>\r\n    <div class=\"col-7 col-md-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-10 col-md-11\">\r\n          <input\r\n            *ngIf=\"showBar\"\r\n            id=\"searchBar\"\r\n            type=\"text\"\r\n            class=\"form-control\"\r\n            placeholder=\"Search Artists\"\r\n            (keyup)=\"updateSearch()\"\r\n          />\r\n        </div>\r\n        <div class=\"col-2 col-md-1\" style=\"padding: 0;\">\r\n          <a\r\n            id=\"searchButton\"\r\n            class=\"btn\"\r\n            style=\"padding-left: 0; cursor: pointer;\"\r\n            (click)=\"showSearchBar(); toggleIcon()\"\r\n          >\r\n            <i\r\n              *ngIf=\"!flipButton\"\r\n              class=\"fa fa-search\"\r\n              style=\"font-size: 20px; color: #343a40\"\r\n            >\r\n            </i>\r\n            <i\r\n              *ngIf=\"flipButton\"\r\n              class=\"fa fa-times\"\r\n              style=\"font-size: 20px; color: #343a40\"\r\n            >\r\n            </i>\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<br />\r\n<div *ngIf=\"searchResults\">\r\n  <div class=\"container\">\r\n    <div class=\"horiz-scroll\">\r\n      <div class=\"card\" *ngFor=\"let artist of searchResults; index as i;\">\r\n        <img\r\n          class=\"card-img-top\"\r\n          src=\"../../../assets/img/{{ artist.profile_picture }}\"\r\n          style=\"width: 286px; height: 180px;\"\r\n          alt=\"{{ artist.name }}\"\r\n        />\r\n        <div class=\"card-body\">\r\n          <h5 *ngIf=\"artist.name\" class=\"card-title\">\r\n            {{ artist.name }}\r\n            <i\r\n              *ngIf=\"showIcons === i || showIcons === 0 || showIcons === 2\"\r\n              style=\"cursor: pointer\"\r\n              class=\"fa fa-edit\"\r\n              data-toggle=\"modal\"\r\n              data-target=\"#editArtistModal\"\r\n              (click)=\"editArtist(i, artist)\"\r\n            >\r\n            </i>\r\n          </h5>\r\n          <h6 *ngIf=\"artist.type\" class=\"card-subtitle mb-2 text-muted\">\r\n            {{ artist.type }}\r\n          </h6>\r\n          <p *ngIf=\"artist.description\" class=\"card-text\">\r\n            {{ artist.description }}\r\n          </p>\r\n          <i\r\n            *ngIf=\"artist.spotify\"\r\n            class=\"fa fa-spotify\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#spotifyModal\"\r\n            (click)=\"openSpotifyModal(artist.spotify)\"\r\n          >\r\n            &nbsp;\r\n          </i>\r\n          <a *ngIf=\"artist.apple\" href=\"{{ artist.apple }}\" target=\"_blank\">\r\n            <i class=\"fa fa-apple\"> &nbsp; </i>\r\n          </a>\r\n          <a\r\n            *ngIf=\"artist.facebook\"\r\n            href=\"{{ artist.facebook }}\"\r\n            target=\"_blank\"\r\n          >\r\n            <i class=\"fa fa-facebook-official\"> &nbsp; </i>\r\n          </a>\r\n          <a *ngIf=\"artist.twitter\" href=\"{{ artist.twitter }}\" target=\"_blank\">\r\n            <i class=\"fa fa-twitter\"> &nbsp; </i>\r\n          </a>\r\n          <a\r\n            *ngIf=\"artist.instagram\"\r\n            href=\"{{ artist.instagram }}\"\r\n            target=\"_blank\"\r\n          >\r\n            <i class=\"fa fa-instagram\"> &nbsp; </i>\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div *ngIf=\"!searchResults\">\r\n  <div class=\"container\">\r\n    <span\r\n      class=\"spinner-border spinner-border-sm\"\r\n      role=\"status\"\r\n      aria-hidden=\"true\"\r\n    ></span>\r\n    Loading...\r\n  </div>\r\n</div>\r\n\r\n<div *ngIf=\"searchResults && searchResults.length === 0\">\r\n  <div class=\"container\">\r\n    There are no artists that matched your search...\r\n  </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"spotifyModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"spotifyModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-body\">\r\n        <iframe\r\n          [src]=\"url\"\r\n          width=\"100%\"\r\n          height=\"380\"\r\n          frameborder=\"0\"\r\n          allowtransparency=\"true\"\r\n          allow=\"encrypted-media\"\r\n        ></iframe>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"editArtistModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"editArtistModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">EDIT ARTIST</h5>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">NAME</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER NAME\"\r\n              [value]=\"editObject.name\"\r\n              (input)=\"editObject.name = $event.target.value\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">TYPE</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER TYPE\"\r\n              [value]=\"editObject.type\"\r\n              (input)=\"editObject.type = $event.target.value\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">DESCRIPTION</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER DESCRIPTION\"\r\n              [value]=\"editObject.description\"\r\n              (input)=\"editObject.description = $event.target.value\"\r\n            />\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\">\r\n          CLOSE\r\n        </button>\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"updateArtist()\">UPDATE</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-3 col-md-6\"><h3>ARTISTS</h3></div>\r\n    <div class=\"offset-2 offset-md-2\"></div>\r\n    <div class=\"col-7 col-md-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-10 col-md-11\">\r\n          <input\r\n            *ngIf=\"showBar\"\r\n            id=\"searchBar\"\r\n            type=\"text\"\r\n            class=\"form-control\"\r\n            placeholder=\"Search Artists\"\r\n            (keyup)=\"updateSearch()\"\r\n          />\r\n        </div>\r\n        <div class=\"col-2 col-md-1\" style=\"padding: 0;\">\r\n          <a\r\n            id=\"searchButton\"\r\n            class=\"btn\"\r\n            style=\"padding-left: 0; cursor: pointer;\"\r\n            (click)=\"showSearchBar(); toggleIcon()\"\r\n          >\r\n            <i\r\n              *ngIf=\"!flipButton\"\r\n              class=\"fa fa-search\"\r\n              style=\"font-size: 20px; color: #343a40\"\r\n            >\r\n            </i>\r\n            <i\r\n              *ngIf=\"flipButton\"\r\n              class=\"fa fa-times\"\r\n              style=\"font-size: 20px; color: #343a40\"\r\n            >\r\n            </i>\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<br />\r\n<div *ngIf=\"searchResults\">\r\n  <div class=\"container\">\r\n    <div class=\"horiz-scroll\">\r\n      <div class=\"card\" *ngFor=\"let artist of searchResults\">\r\n        <img\r\n          class=\"card-img-top\"\r\n          src=\"../../../assets/img/{{ artist.profile_picture }}\"\r\n          style=\"width: 286px; height: 180px;\"\r\n          alt=\"{{ artist.name }}\"\r\n        />\r\n        <div class=\"card-body\">\r\n          <h5 *ngIf=\"artist.name\" class=\"card-title\">\r\n            {{ artist.name }}\r\n            <i\r\n              *ngIf=\"showIcons.username === artist.username || showIcons.auth === 'admin'\"\r\n              style=\"cursor: pointer\"\r\n              class=\"fa fa-edit\"\r\n              data-toggle=\"modal\"\r\n              data-target=\"#editArtistModal\"\r\n              (click)=\"editArtist(i, artist)\"\r\n            >\r\n            </i>\r\n          </h5>\r\n          <h6 *ngIf=\"artist.type\" class=\"card-subtitle mb-2 text-muted\">\r\n            {{ artist.type }}\r\n          </h6>\r\n          <p *ngIf=\"artist.description\" class=\"card-text\">\r\n            {{ artist.description }}\r\n          </p>\r\n          <i\r\n            *ngIf=\"artist.spotify\"\r\n            class=\"fa fa-spotify\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#spotifyModal\"\r\n            (click)=\"openSpotifyModal(artist.spotify)\"\r\n          >\r\n            &nbsp;\r\n          </i>\r\n          <a *ngIf=\"artist.apple\" href=\"{{ artist.apple }}\" target=\"_blank\">\r\n            <i class=\"fa fa-apple\"> &nbsp; </i>\r\n          </a>\r\n          <a\r\n            *ngIf=\"artist.facebook\"\r\n            href=\"{{ artist.facebook }}\"\r\n            target=\"_blank\"\r\n          >\r\n            <i class=\"fa fa-facebook-official\"> &nbsp; </i>\r\n          </a>\r\n          <a *ngIf=\"artist.twitter\" href=\"{{ artist.twitter }}\" target=\"_blank\">\r\n            <i class=\"fa fa-twitter\"> &nbsp; </i>\r\n          </a>\r\n          <a\r\n            *ngIf=\"artist.instagram\"\r\n            href=\"{{ artist.instagram }}\"\r\n            target=\"_blank\"\r\n          >\r\n            <i class=\"fa fa-instagram\"> &nbsp; </i>\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div *ngIf=\"!searchResults\">\r\n  <div class=\"container\">\r\n    <span\r\n      class=\"spinner-border spinner-border-sm\"\r\n      role=\"status\"\r\n      aria-hidden=\"true\"\r\n    ></span>\r\n    Loading...\r\n  </div>\r\n</div>\r\n\r\n<div *ngIf=\"searchResults && searchResults.length === 0\">\r\n  <div class=\"container\">\r\n    There are no artists that matched your search...\r\n  </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"spotifyModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"spotifyModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-body\">\r\n        <iframe\r\n          [src]=\"url\"\r\n          width=\"100%\"\r\n          height=\"380\"\r\n          frameborder=\"0\"\r\n          allowtransparency=\"true\"\r\n          allow=\"encrypted-media\"\r\n        ></iframe>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"editArtistModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"editArtistModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">EDIT ARTIST</h5>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">NAME</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER NAME\"\r\n              [value]=\"editObject.name\"\r\n              (input)=\"editObject.name = $event.target.value\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">TYPE</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER TYPE\"\r\n              [value]=\"editObject.type\"\r\n              (input)=\"editObject.type = $event.target.value\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">DESCRIPTION</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER DESCRIPTION\"\r\n              [value]=\"editObject.description\"\r\n              (input)=\"editObject.description = $event.target.value\"\r\n            />\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\">\r\n          CLOSE\r\n        </button>\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"updateArtist()\">UPDATE</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -74,7 +74,7 @@ module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-3\"></div>\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h3>\r\n    ABOUT\r\n  </h3>\r\n\r\n  Contact us pages are often the go-to for a new visitor on a mission. It’s\r\n  where they go when they have a question and truly want to speak to an\r\n  individual at your organization. They exist to serve the user with the purpose\r\n  of providing the user with information on how they can get in touch with you.\r\n  The goal of every contact us page is to convert by clearly and effectively\r\n  presenting the method(s) of getting in touch with a company as quickly as\r\n  possible. Here are a few best practices that you should keep in mind when\r\n  putting together your next contact us page: Contact us pages are often the\r\n  go-to for a new visitor on a mission. It’s where they go when they have a\r\n  question and truly want to speak to an individual at your organization. They\r\n  exist to serve the user with the purpose of providing the user with\r\n  information on how they can get in touch with you. The goal of every contact\r\n  us page is to convert by clearly and effectively presenting the method(s) of\r\n  getting in touch with a company as quickly as possible. Here are a few best\r\n  practices that you should keep in mind when putting together your next contact\r\n  us page: Contact us pages are often the go-to for a new visitor on a mission.\r\n  It’s where they go when they have a question and truly want to speak to an\r\n  individual at your organization. They exist to serve the user with the purpose\r\n  of providing the user with information on how they can get in touch with you.\r\n  The goal of every contact us page is to convert by clearly and effectively\r\n  presenting.\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <h3>\r\n    ABOUT\r\n    <i\r\n      *ngIf=\"showIcons.auth === 'admin'\"\r\n      style=\"cursor: pointer; font-size: 20px;\"\r\n      class=\"fa fa-edit\"\r\n      (click)=\"editField();\"\r\n    ></i>\r\n  </h3>\r\n\r\n  <div *ngIf=\"!isEditable\">\r\n    {{ aboutUsData }}\r\n  </div>\r\n  <textarea\r\n    *ngIf=\"isEditable\"\r\n    rows=\"5\"\r\n    style=\"width: 100%\"\r\n    [value]=\"updatedField\"\r\n    (input)=\"updatedField = $event.target.value\">\r\n  </textarea>\r\n  <button *ngIf=\"isEditable\" type=\"button\" class=\"btn pull-right\" (click)=\"updateEdit()\">UPDATE</button>\r\n  <button *ngIf=\"isEditable\" type=\"button\" class=\"btn pull-right\" (click)=\"closeEdit()\">CLOSE</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -85,7 +85,7 @@ module.exports = "<div class=\"container\">\r\n  <h3>\r\n    ABOUT\r\n  </h3>\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<artist-cards [showIcons]=\"showIcons\"></artist-cards>\r\n<br />\r\n<artist-info></artist-info>\r\n<br />\r\n"
+module.exports = "<artist-cards [showIcons]=\"showIcons\"></artist-cards>\r\n"
 
 /***/ }),
 
@@ -96,7 +96,7 @@ module.exports = "<artist-cards [showIcons]=\"showIcons\"></artist-cards>\r\n<br
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h3>\r\n    CONTACT\r\n  </h3>\r\n\r\n  Contact us pages are often the go-to for a new visitor on a mission. It’s\r\n  where they go when they have a question and truly want to speak to an\r\n  individual at your organization. They exist to serve the user with the purpose\r\n  of providing the user with information on how they can get in touch with you.\r\n  The goal of every contact us page is to convert by clearly and effectively\r\n  presenting the method(s) of getting in touch with a company as quickly as\r\n  possible. Here are a few best practices that you should keep in mind when\r\n  putting together your next contact us page: Contact us pages are often the\r\n  go-to for a new visitor on a mission. It’s where they go when they have a\r\n  question and truly want to speak to an individual at your organization. They\r\n  exist to serve the user with the purpose of providing the user with\r\n  information on how they can get in touch with you.\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <h3>\r\n    CONTACT\r\n    <i\r\n      *ngIf=\"showIcons.auth === 'admin'\"\r\n      style=\"cursor: pointer; font-size: 20px;\"\r\n      class=\"fa fa-edit\"\r\n      (click)=\"editField();\"\r\n    ></i>\r\n  </h3>\r\n\r\n  <div *ngIf=\"!isEditable\">\r\n    {{ contactUsData }}\r\n  </div>\r\n  <textarea \r\n    *ngIf=\"isEditable\" \r\n    rows=\"5\" \r\n    style=\"width: 100%\"\r\n    [value]=\"updatedField\"\r\n    (input)=\"updatedField = $event.target.value\">\r\n  </textarea>\r\n  <button *ngIf=\"isEditable\" type=\"button\" class=\"btn pull-right\" (click)=\"updateEdit()\">UPDATE</button>\r\n  <button *ngIf=\"isEditable\" type=\"button\" class=\"btn pull-right\" (click)=\"closeEdit()\">CLOSE</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -167,7 +167,10 @@ let AppComponent = class AppComponent {
             username: "",
             password: ""
         };
-        this.showIcons = -1;
+        this.showIcons = {
+            username: 'none',
+            auth: 'basic'
+        };
     }
     authorizeAdmin() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -556,13 +559,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutUsComponent", function() { return AboutUsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_firebase_firebase_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/firebase/firebase.service */ "./src/app/services/firebase/firebase.service.ts");
+
 
 
 let AboutUsComponent = class AboutUsComponent {
-    constructor() { }
+    constructor(firebaseService) {
+        this.firebaseService = firebaseService;
+        this.isEditable = false;
+        this.updatedField = "";
+    }
     ngOnInit() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.aboutUsData = yield this.firebaseService.genericGetter('about_us');
+            this.updatedField = this.aboutUsData;
+        });
+    }
+    editField() {
+        this.isEditable = true;
+        this.updatedField = this.aboutUsData;
+    }
+    closeEdit() {
+        this.isEditable = false;
+        this.updatedField = "";
+    }
+    updateEdit() {
+        this.firebaseService.genericSetter('about_us', this.updatedField);
+        this.ngOnInit();
+        this.closeEdit();
     }
 };
+AboutUsComponent.ctorParameters = () => [
+    { type: _services_firebase_firebase_service__WEBPACK_IMPORTED_MODULE_2__["FirebaseService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], AboutUsComponent.prototype, "showIcons", void 0);
 AboutUsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'about-us',
@@ -642,13 +674,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactUsComponent", function() { return ContactUsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_firebase_firebase_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/firebase/firebase.service */ "./src/app/services/firebase/firebase.service.ts");
+
 
 
 let ContactUsComponent = class ContactUsComponent {
-    constructor() { }
+    constructor(firebaseService) {
+        this.firebaseService = firebaseService;
+        this.isEditable = false;
+        this.updatedField = "";
+    }
     ngOnInit() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.contactUsData = yield this.firebaseService.genericGetter('contact_us');
+            this.updatedField = this.contactUsData;
+        });
+    }
+    editField() {
+        this.isEditable = true;
+        this.updatedField = this.contactUsData;
+    }
+    closeEdit() {
+        this.isEditable = false;
+        this.updatedField = "";
+    }
+    updateEdit() {
+        this.firebaseService.genericSetter('contact_us', this.updatedField);
+        this.ngOnInit();
+        this.closeEdit();
     }
 };
+ContactUsComponent.ctorParameters = () => [
+    { type: _services_firebase_firebase_service__WEBPACK_IMPORTED_MODULE_2__["FirebaseService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ContactUsComponent.prototype, "showIcons", void 0);
 ContactUsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'contact-us',
@@ -698,7 +759,10 @@ let FirebaseService = class FirebaseService {
             var array = yield this.getArtistsRealtime();
             for (var i = 0; i < array.length; i++) {
                 if (userAuth.username === array[i].username && userAuth.password === array[i].password) {
-                    return i;
+                    return {
+                        username: array[i].username,
+                        auth: array[i].auth
+                    };
                 }
             }
             return -1;
@@ -716,12 +780,27 @@ let FirebaseService = class FirebaseService {
     }
     getArtistsRealtime() {
         return new Promise(function (resolve) {
-            this.realtime.ref("/artists/").once("value", function (snapshot) {
+            this.realtime.ref("artists/").once("value", function (snapshot) {
                 var array = [];
                 snapshot.forEach(function (_child) {
                     array.push(_child.val());
                 });
                 resolve(array);
+            });
+        }.bind(this));
+    }
+    genericSetter(key, update) {
+        return new Promise(function (resolve) {
+            this.realtime.ref(key + "/").update({
+                value: update
+            });
+            resolve(true);
+        }.bind(this));
+    }
+    genericGetter(key) {
+        return new Promise(function (resolve) {
+            this.realtime.ref(key + "/").once("value", function (snapshot) {
+                resolve(snapshot.val().value);
             });
         }.bind(this));
     }
