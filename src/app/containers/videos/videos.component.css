@@ -5,7 +5,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.card{
+.card {
   white-space: pre-line;
   display: inline-block;
   width: 18rem;

@@ -1,0 +1,21 @@
+<div>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 col-md-6"><h3>VIDEOS</h3></div>
+    </div>
+  </div>
+  <div *ngIf="true">
+    <br>
+    <div class="container">
+      <div class="horiz-scroll">
+        <div
+          class="card"
+          style="height: auto; width: auto;"
+          *ngFor="let url of urls; index as i"
+        >
+        <iframe style="background-color: #ededed" height="250" width="450" [src]="url"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

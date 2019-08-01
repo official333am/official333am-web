@@ -66,6 +66,21 @@ export class FirebaseService {
     );
   }
 
+  getVideos(): Promise<{}> {
+    return new Promise(
+      function(resolve) {
+        this.realtime.ref("videos/").once("value", function(snapshot) {
+          var array = [];
+          snapshot.forEach(function(_child) {
+            array.push(_child.val());
+          });
+
+          resolve(array);
+        });
+      }.bind(this)
+    );
+  }
+
   genericSetter(key: string, update: string): Promise<{}> {
     return new Promise(
       function(resolve) {
