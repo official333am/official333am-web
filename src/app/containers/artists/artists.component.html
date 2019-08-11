@@ -74,7 +74,7 @@
             {{ artist.type }}
           </h6>
           <p *ngIf="artist.description" class="card-text">
-            {{ artist.description | slice: 0:110 }}... <a href="#">Read More</a>
+            {{ artist.description | slice: 0:100 }}... <a href="#">Read More</a>
           </p>
           <i
             *ngIf="artist.spotify"
