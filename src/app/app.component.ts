@@ -75,4 +75,8 @@ export class AppComponent {
   runParentTest() {
     this.showIcons = 1;
   }
+
+  closeTwitterNetworking() {
+    $("#twitterModal").modal("toggle");
+  }
 }

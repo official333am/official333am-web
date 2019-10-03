@@ -1,0 +1,8 @@
+{
+    "*": {
+        "target": "https://official333am-server.firebaseapp.com",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

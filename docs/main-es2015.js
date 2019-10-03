@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\r\n  <nav class=\"navbar navbar-dark bg-dark navbar-expand-lg scrolling-navbar\">\r\n    <strong class=\"header nav-right\" style=\"color: white\">\r\n      3:33AM MULTIMEDIA COLLECTIVE\r\n    </strong>\r\n    <div class=\"navbar-collapse\" id=\"navbarSupportedContent\">\r\n      <ul class=\"navbar-nav mr-auto flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#artists\">ARTISTS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#videos\">VIDEOS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#about-us\">ABOUT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#contact-us\">CONTACT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"#\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#adminModal\"\r\n            (click)=\"newLogin();\"\r\n            >ADMIN</a\r\n          >\r\n        </li>\r\n      </ul>\r\n      <ul class=\"navbar-nav flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-spotify\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-apple\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-facebook-official\" style=\"color:white\"\r\n              >&nbsp;</i\r\n            ></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-twitter\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-instagram\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n</header>\r\n<main>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <artists id=\"artists\" [showIcons]=\"showIcons\"></artists>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <videos id=\"videos\" [showIcons]=\"showIcons\"></videos>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <about-us id=\"about-us\" [showIcons]=\"showIcons\"></about-us>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <contact-us id=\"contact-us\" [showIcons]=\"showIcons\"></contact-us>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n</main>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"adminModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"adminModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">ADMIN LOGIN</h5>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">USERNAME</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER USERNAME\"\r\n              (input)=\"userAuth.username = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.username\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">PASSWORD</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"password\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER PASSWORD\"\r\n              (input)=\"userAuth.password = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.password\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-1\"></div>\r\n          <small \r\n            class=\"col-sm-10\" \r\n            style=\"color: red\"\r\n            *ngIf=\"!validLogin && errorsEnabled\">\r\n            The username/password combination does exist in our records.\r\n          </small>\r\n          <div class=\"col-sm-1\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"disableErrors(); clearLogin();\">\r\n          CLOSE\r\n        </button>\r\n        <button \r\n          *ngIf=\"closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          data-dismiss=\"modal\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n        <button\r\n        *ngIf=\"!closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<header>\r\n  <nav class=\"navbar navbar-dark bg-dark navbar-expand-lg scrolling-navbar\">\r\n    <strong class=\"header nav-right\" style=\"color: white\">\r\n      3:33AM MULTIMEDIA COLLECTIVE\r\n    </strong>\r\n    <div class=\"navbar-collapse\" id=\"navbarSupportedContent\">\r\n      <ul class=\"navbar-nav mr-auto flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#artists\">ARTISTS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#videos\">VIDEOS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#about-us\">ABOUT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#contact-us\">CONTACT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"#\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#adminModal\"\r\n            (click)=\"newLogin();\"\r\n            >ADMIN</a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"#\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#twitterModal\"\r\n            >TWEET</a\r\n          >\r\n        </li>\r\n      </ul>\r\n      <ul class=\"navbar-nav flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-spotify\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-apple\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-facebook-official\" style=\"color:white\"\r\n              >&nbsp;</i\r\n            ></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-twitter\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-instagram\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n</header>\r\n<main>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <artists id=\"artists\" [showIcons]=\"showIcons\"></artists>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <videos id=\"videos\" [showIcons]=\"showIcons\"></videos>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <about-us id=\"about-us\" [showIcons]=\"showIcons\"></about-us>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <contact-us id=\"contact-us\" [showIcons]=\"showIcons\"></contact-us>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n</main>\r\n\r\n<div\r\n  class=\"modal fade\"\r\n  id=\"twitterModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"twitterModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-content\">\r\n    <div class=\"modal-header\">\r\n      <h5 class=\"modal-title\" id=\"exampleModalLabel\">TWITTER NETWORKING</h5>\r\n      <!-- <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button> -->\r\n    </div>\r\n    <div class=\"modal-body\">\r\n      <twitter-networking>\r\n      </twitter-networking>\r\n    </div>\r\n    <!-- <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"close()\">\r\n        CLOSE\r\n      </button>\r\n    </div> -->\r\n  </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"adminModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"adminModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">ADMIN LOGIN</h5>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">USERNAME</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER USERNAME\"\r\n              (input)=\"userAuth.username = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.username\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">PASSWORD</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"password\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER PASSWORD\"\r\n              (input)=\"userAuth.password = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.password\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-1\"></div>\r\n          <small \r\n            class=\"col-sm-10\" \r\n            style=\"color: red\"\r\n            *ngIf=\"!validLogin && errorsEnabled\">\r\n            The username/password combination does exist in our records.\r\n          </small>\r\n          <div class=\"col-sm-1\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"disableErrors(); clearLogin();\">\r\n          CLOSE\r\n        </button>\r\n        <button \r\n          *ngIf=\"closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          data-dismiss=\"modal\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n        <button\r\n          *ngIf=\"!closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -64,6 +64,17 @@ module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container\">\r\n  <h3>\r\n    CONTACT\r\n    <i\r\n      *ngIf=\"showIcons.auth === 'admin'\"\r\n      style=\"cursor: pointer; font-size: 20px;\"\r\n      class=\"fa fa-edit\"\r\n      (click)=\"editField();\"\r\n    ></i>\r\n  </h3>\r\n\r\n  <div *ngIf=\"!isEditable\">\r\n    {{ contactUsData }}\r\n  </div>\r\n  <textarea \r\n    *ngIf=\"isEditable\" \r\n    rows=\"5\" \r\n    style=\"width: 100%\"\r\n    [value]=\"updatedField\"\r\n    (input)=\"updatedField = $event.target.value\">\r\n  </textarea>\r\n  <button *ngIf=\"isEditable\" type=\"button\" class=\"btn pull-right\" (click)=\"updateEdit()\">UPDATE</button>\r\n  <button *ngIf=\"isEditable\" type=\"button\" class=\"btn pull-right\" (click)=\"closeEdit()\">CLOSE</button>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/containers/twitter-networking/twitter-networking.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/containers/twitter-networking/twitter-networking.component.html ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" [formGroup]=\"userForm\">\n\t<div class=\"row\">\n\t\t<div class=\"col-md-2\">\n\t\t\t<label>\n\t\t\t\tArtist\n\t\t\t</label>\n\t\t\t<input type=\"text\" id=\"artist\" name=\"artist\" class=\"form-control\" formControlName=\"artist\">\n\t\t</div>\n\t\t<div class=\"col-md-2\">\n\t\t\t<label>\n\t\t\t\tSong\n\t\t\t</label>\n\t\t\t<input type=\"text\" id=\"song\" name=\"song\" class=\"form-control\" formControlName=\"song\">\n\t\t</div>\n\t\t<div class=\"col-md-2\">\n\t\t\t<label>\n\t\t\t\tSearch Count\n\t\t\t</label>\n\t\t\t<input type=\"number\" id=\"search_count\" name=\"search_count\" class=\"form-control\" formControlName=\"search_count\">\n\t\t</div>\n\t\t<div class=\"col-md-2\">\n\t\t\t<label>\n\t\t\t\tMinimum Likes\n\t\t\t</label>\n\t\t\t<input type=\"number\" id=\"min_likes\" name=\"min_likes\" class=\"form-control\" formControlName=\"min_likes\">\n\t\t</div>\n\t\t<div class=\"col-md-2\">\n\t\t\t<label>\n\t\t\t\tMinimum Retweets\n\t\t\t</label>\n\t\t\t<input type=\"number\" id=\"min_retweets\" name=\"min_retweets\" class=\"form-control\" formControlName=\"min_retweets\">\n\t\t</div>\n\t\t<div class=\"col-md-2\">\n\t\t\t<label>\n\t\t\t\tMinimum Followers\n\t\t\t</label>\n\t\t\t<input type=\"number\" id=\"min_followers\" name=\"min_followers\" class=\"form-control\" formControlName=\"min_followers\">\n\t\t</div>\n\t</div>\n\t<br>\n\t<div class=\"row pull-right\">\n\t\t<button type=\"button\" class=\"btn\" (click)=\"submit()\" [disabled]=\"!submitButtonEnabled || !isFormValid\">SUBMIT</button>\n\t</div>\n</div>\n<p *ngIf=\"resultJSON.length !== 0\">\n\t<em>\n\t\t{{ resultJSON.length }} SEARCH RESULTS\n\t</em>\n</p>\n<hr *ngIf=\"resultJSON.length !== 0\">\n<div class=\"container result-container\" *ngIf=\"resultJSON.length !== 0\">\n\t<div class=\"row results\" *ngFor=\"let tweet of resultJSON; let i = index\">\n\t\t<div class=\"col-md-12\">\n\t\t\t<p>\n\t\t\t\t<strong>\n\t\t\t\t\t{{ i + 1 }}. {{ tweet.name }}\n\t\t\t\t</strong>\n\t\t\t\t<em>\n\t\t\t\t\t{{ tweet.username }} ({{ tweet.followers }} Followers)\n\t\t\t\t</em>\n\t\t\t</p>\n\t\t\t<p>\n\t\t\t\t{{ tweet.tweet }}\n\t\t\t</p>\n\t\t\t<p>\n\t\t\t\t<em>\n\t\t\t\t{{ tweet.retweets }} Retweets | {{ tweet.likes }} Likes\n\t\t\t\t</em>\n\t\t\t</p>\n\t\t</div>\n\t</div>\n</div>\n<hr *ngIf=\"resultJSON.length !== 0\">\n<div class=\"container dm-section\" *ngIf=\"resultJSON.length !== 0\">\n\t<div class=\"row\">\n\t\t<div class=\"col-md-10\">\n\t\t\t<textarea rows=\"3\" style=\"width: 100%\" id=\"inital_message\" name=\"inital_message\" formControlName=\"inital_message\">\n\t\t\t</textarea>\n\t\t</div>\n\t\t<div class=\"col-md-2\">\n\t\t\t<button type=\"button\" class=\"btn pull-right\">SEND MESSAGE</button>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -192,6 +203,9 @@ let AppComponent = class AppComponent {
     runParentTest() {
         this.showIcons = 1;
     }
+    closeTwitterNetworking() {
+        $("#twitterModal").modal("toggle");
+    }
 };
 AppComponent.ctorParameters = () => [
     { type: _services_firebase_firebase_service__WEBPACK_IMPORTED_MODULE_2__["FirebaseService"] }
@@ -221,12 +235,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/artists/artists.component */ "./src/app/containers/artists/artists.component.ts");
-/* harmony import */ var _containers_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./containers/contact-us/contact-us.component */ "./src/app/containers/contact-us/contact-us.component.ts");
-/* harmony import */ var _containers_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./containers/about-us/about-us.component */ "./src/app/containers/about-us/about-us.component.ts");
-/* harmony import */ var _containers_videos_videos_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers/videos/videos.component */ "./src/app/containers/videos/videos.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./containers/artists/artists.component */ "./src/app/containers/artists/artists.component.ts");
+/* harmony import */ var _containers_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers/contact-us/contact-us.component */ "./src/app/containers/contact-us/contact-us.component.ts");
+/* harmony import */ var _containers_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./containers/about-us/about-us.component */ "./src/app/containers/about-us/about-us.component.ts");
+/* harmony import */ var _containers_videos_videos_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./containers/videos/videos.component */ "./src/app/containers/videos/videos.component.ts");
+/* harmony import */ var _containers_twitter_networking_twitter_networking_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./containers/twitter-networking/twitter-networking.component */ "./src/app/containers/twitter-networking/twitter-networking.component.ts");
+
+
+
 
 
 
@@ -241,18 +261,21 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-            _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_5__["ArtistsComponent"],
-            _containers_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_6__["ContactUsComponent"],
-            _containers_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_7__["AboutUsComponent"],
-            _containers_videos_videos_component__WEBPACK_IMPORTED_MODULE_8__["VideosComponent"],
+            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+            _containers_artists_artists_component__WEBPACK_IMPORTED_MODULE_7__["ArtistsComponent"],
+            _containers_contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_8__["ContactUsComponent"],
+            _containers_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_9__["AboutUsComponent"],
+            _containers_videos_videos_component__WEBPACK_IMPORTED_MODULE_10__["VideosComponent"],
+            _containers_twitter_networking_twitter_networking_component__WEBPACK_IMPORTED_MODULE_11__["TwitterNetworkingComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
         ],
         providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })
 ], AppModule);
 
@@ -531,6 +554,101 @@ ContactUsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [__webpack_require__(/*! ./contact-us.component.css */ "./src/app/containers/contact-us/contact-us.component.css")]
     })
 ], ContactUsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/containers/twitter-networking/twitter-networking.component.css":
+/*!********************************************************************************!*\
+  !*** ./src/app/containers/twitter-networking/twitter-networking.component.css ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container {\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.result-container {   \r\n    overflow-y:auto;\r\n    height: 175px;\r\n}\r\n\r\np {\r\n    margin-top: 0;\r\n    margin-bottom: 0rem;\r\n}\r\n\r\n.results {\r\n    margin-bottom: 2em !important;\r\n}\r\n\r\n.dm-section {\r\n    padding-bottom: 30px !important;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGFpbmVycy90d2l0dGVyLW5ldHdvcmtpbmcvdHdpdHRlci1uZXR3b3JraW5nLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSxlQUFlO0lBQ2YsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLGFBQWE7SUFDYixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSw2QkFBNkI7QUFDakM7O0FBRUE7SUFDSSwrQkFBK0I7QUFDbkMiLCJmaWxlIjoic3JjL2FwcC9jb250YWluZXJzL3R3aXR0ZXItbmV0d29ya2luZy90d2l0dGVyLW5ldHdvcmtpbmcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xyXG4gICAgcGFkZGluZy1ib3R0b206IDUwcHg7XHJcbn1cclxuXHJcbi5yZXN1bHQtY29udGFpbmVyIHsgICBcclxuICAgIG92ZXJmbG93LXk6YXV0bztcclxuICAgIGhlaWdodDogMTc1cHg7XHJcbn1cclxuXHJcbnAge1xyXG4gICAgbWFyZ2luLXRvcDogMDtcclxuICAgIG1hcmdpbi1ib3R0b206IDByZW07XHJcbn1cclxuXHJcbi5yZXN1bHRzIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDJlbSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uZG0tc2VjdGlvbiB7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMzBweCAhaW1wb3J0YW50O1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/containers/twitter-networking/twitter-networking.component.ts":
+/*!*******************************************************************************!*\
+  !*** ./src/app/containers/twitter-networking/twitter-networking.component.ts ***!
+  \*******************************************************************************/
+/*! exports provided: TwitterNetworkingComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterNetworkingComponent", function() { return TwitterNetworkingComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+
+let TwitterNetworkingComponent = class TwitterNetworkingComponent {
+    constructor(formBuilder, http) {
+        this.formBuilder = formBuilder;
+        this.http = http;
+        this.resultJSON = [];
+        this.submitButtonEnabled = true;
+    }
+    ngOnInit() {
+        this.userForm = this.formBuilder.group({
+            artist: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            song: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            search_count: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            min_likes: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            min_retweets: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            min_followers: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            inital_message: ['']
+        });
+    }
+    submit(max_id) {
+        this.submitButtonEnabled = false;
+        if (!max_id) {
+            this.resultJSON = [];
+        }
+        this.getUsers({
+            artist: this.userForm.get('artist').value,
+            song: this.userForm.get('song').value,
+            search_count: this.userForm.get('search_count').value - this.resultJSON.length,
+            min_retweets: this.userForm.get('min_retweets').value,
+            min_likes: this.userForm.get('min_likes').value,
+            min_followers: this.userForm.get('min_followers').value,
+            max_id: max_id
+        }).subscribe(res => {
+            res.data.forEach(element => {
+                this.resultJSON.push(element);
+            });
+            if (this.resultJSON.length < this.userForm.get('search_count').value) {
+                this.submit(res.max_id);
+            }
+            else {
+                this.submitButtonEnabled = true;
+            }
+        });
+    }
+    getUsers(json) {
+        return this.http.post('api/twitter/search', json);
+    }
+    get isFormValid() {
+        return this.userForm.valid;
+    }
+};
+TwitterNetworkingComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+];
+TwitterNetworkingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'twitter-networking',
+        template: __webpack_require__(/*! raw-loader!./twitter-networking.component.html */ "./node_modules/raw-loader/index.js!./src/app/containers/twitter-networking/twitter-networking.component.html"),
+        styles: [__webpack_require__(/*! ./twitter-networking.component.css */ "./src/app/containers/twitter-networking/twitter-networking.component.css")]
+    })
+], TwitterNetworkingComponent);
 
 
 
