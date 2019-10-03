@@ -27,6 +27,15 @@
             >ADMIN</a
           >
         </li>
+        <li class="nav-item nav-tab">
+          <a
+            class="nav-link"
+            href="#"
+            data-toggle="modal"
+            data-target="#twitterModal"
+            >TWEET</a
+          >
+        </li>
       </ul>
       <ul class="navbar-nav flex-direction">
         <li class="nav-item nav-tab">
@@ -93,6 +102,31 @@
   <br /> <!-- YUCK FIX THIS -->
   <br /> <!-- YUCK FIX THIS -->
 </main>
+
+<div
+  class="modal fade"
+  id="twitterModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="twitterModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">TWITTER NETWORKING</h5>
+      <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+    </div>
+    <div class="modal-body">
+      <twitter-networking>
+      </twitter-networking>
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn" data-dismiss="modal" (click)="close()">
+        CLOSE
+      </button>
+    </div> -->
+  </div>
+</div>
 
 <!-- Modal -->
 <div
@@ -161,7 +195,7 @@
           LOGIN
         </button>
         <button
-        *ngIf="!closeEnabled"
+          *ngIf="!closeEnabled"
           type="button"
           class="btn"
           (click)="authorizeAdmin()"

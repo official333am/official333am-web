@@ -1,0 +1,21 @@
+.container {
+    padding-bottom: 50px;
+}
+
+.result-container {   
+    overflow-y:auto;
+    height: 175px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.results {
+    margin-bottom: 2em !important;
+}
+
+.dm-section {
+    padding-bottom: 30px !important;
+}

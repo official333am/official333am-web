@@ -1,0 +1,84 @@
+<div class="container" [formGroup]="userForm">
+	<div class="row">
+		<div class="col-md-2">
+			<label>
+				Artist
+			</label>
+			<input type="text" id="artist" name="artist" class="form-control" formControlName="artist">
+		</div>
+		<div class="col-md-2">
+			<label>
+				Song
+			</label>
+			<input type="text" id="song" name="song" class="form-control" formControlName="song">
+		</div>
+		<div class="col-md-2">
+			<label>
+				Search Count
+			</label>
+			<input type="number" id="search_count" name="search_count" class="form-control" formControlName="search_count">
+		</div>
+		<div class="col-md-2">
+			<label>
+				Minimum Likes
+			</label>
+			<input type="number" id="min_likes" name="min_likes" class="form-control" formControlName="min_likes">
+		</div>
+		<div class="col-md-2">
+			<label>
+				Minimum Retweets
+			</label>
+			<input type="number" id="min_retweets" name="min_retweets" class="form-control" formControlName="min_retweets">
+		</div>
+		<div class="col-md-2">
+			<label>
+				Minimum Followers
+			</label>
+			<input type="number" id="min_followers" name="min_followers" class="form-control" formControlName="min_followers">
+		</div>
+	</div>
+	<br>
+	<div class="row pull-right">
+		<button type="button" class="btn" (click)="submit()" [disabled]="!submitButtonEnabled || !isFormValid">SUBMIT</button>
+	</div>
+</div>
+<p *ngIf="resultJSON.length !== 0">
+	<em>
+		{{ resultJSON.length }} SEARCH RESULTS
+	</em>
+</p>
+<hr *ngIf="resultJSON.length !== 0">
+<div class="container result-container" *ngIf="resultJSON.length !== 0">
+	<div class="row results" *ngFor="let tweet of resultJSON; let i = index">
+		<div class="col-md-12">
+			<p>
+				<strong>
+					{{ i + 1 }}. {{ tweet.name }}
+				</strong>
+				<em>
+					{{ tweet.username }} ({{ tweet.followers }} Followers)
+				</em>
+			</p>
+			<p>
+				{{ tweet.tweet }}
+			</p>
+			<p>
+				<em>
+				{{ tweet.retweets }} Retweets | {{ tweet.likes }} Likes
+				</em>
+			</p>
+		</div>
+	</div>
+</div>
+<hr *ngIf="resultJSON.length !== 0">
+<div class="container dm-section" *ngIf="resultJSON.length !== 0">
+	<div class="row">
+		<div class="col-md-10">
+			<textarea rows="3" style="width: 100%" id="inital_message" name="inital_message" formControlName="inital_message">
+			</textarea>
+		</div>
+		<div class="col-md-2">
+			<button type="button" class="btn pull-right">SEND MESSAGE</button>
+		</div>
+	</div>
+</div>
