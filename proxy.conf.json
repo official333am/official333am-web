@@ -1,6 +1,6 @@
 {
     "*": {
-        "target": "https://official333am-server.firebaseapp.com",
+        "target": "http://localhost:5000",
         "secure": false,
         "logLevel": "debug",
         "changeOrigin": true
