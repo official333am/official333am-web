@@ -928,7 +928,7 @@ var TwitterService = /** @class */ (function () {
     function TwitterService(http) {
         this.http = http;
         this.serverHost = 'https://official333am-server.firebaseapp.com';
-        if (window.location.href.indexOf('localhost')) {
+        if (window.location.href.indexOf('localhost') !== -1) {
             this.serverHost = 'http://localhost:5000';
         }
     }

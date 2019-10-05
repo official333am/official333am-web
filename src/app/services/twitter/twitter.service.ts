@@ -10,7 +10,7 @@ export class TwitterService {
   constructor(
     private http: HttpClient
   ) {
-    if (window.location.href.indexOf('localhost')) {
+    if (window.location.href.indexOf('localhost') !== -1) {
       this.serverHost = 'http://localhost:5000'
     }
   }
