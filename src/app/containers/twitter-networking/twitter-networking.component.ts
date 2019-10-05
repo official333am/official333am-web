@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { TwitterService } from '../../services/twitter/twitter.service';
 
 @Component({
   selector: 'twitter-networking',
@@ -14,7 +14,7 @@ export class TwitterNetworkingComponent implements OnInit {
 
   constructor(
     public formBuilder: FormBuilder,
-    private http: HttpClient
+    public twitterService: TwitterService
   ) { } 
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class TwitterNetworkingComponent implements OnInit {
       this.resultJSON = [];
     }
 
-    this.getUsers({
+    this.twitterService.getUsers({
       artist: this.userForm.get('artist').value,
       song: this.userForm.get('song').value,
       search_count: this.userForm.get('search_count').value - this.resultJSON.length,
@@ -57,13 +57,15 @@ export class TwitterNetworkingComponent implements OnInit {
     });
   }
 
+  sendMessage() {
+    this.twitterService.sendMessage({}).subscribe(res => {
+      alert(res);
+    });;
+  }
+
   clearAll() {
     this.userForm.reset();
     this.resultJSON = [];
-  }
-
-  getUsers(json: any) {
-    return this.http.post<any>('https://official333am-server.firebaseapp.com/api/twitter/search', json);
   }
 
   public get isFormValid() {

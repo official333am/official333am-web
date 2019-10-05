@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\r\n  <nav class=\"navbar navbar-dark bg-dark navbar-expand-lg scrolling-navbar\">\r\n    <strong class=\"header nav-right\" style=\"color: white\">\r\n      3:33AM MULTIMEDIA COLLECTIVE\r\n    </strong>\r\n    <div class=\"navbar-collapse\" id=\"navbarSupportedContent\">\r\n      <ul class=\"navbar-nav mr-auto flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#artists\">ARTISTS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#videos\">VIDEOS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#about-us\">ABOUT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#contact-us\">CONTACT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"#\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#adminModal\"\r\n            (click)=\"newLogin();\"\r\n            >ADMIN</a\r\n          >\r\n        </li>\r\n      </ul>\r\n      <ul class=\"navbar-nav flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-spotify\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-apple\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-facebook-official\" style=\"color:white\"\r\n              >&nbsp;</i\r\n            ></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-twitter\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-instagram\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n</header>\r\n<main>\r\n  <br />\r\n  <twitter-networking *ngIf=\"showIcons.auth === 'admin'\"></twitter-networking>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <artists id=\"artists\" [showIcons]=\"showIcons\"></artists>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <videos id=\"videos\" [showIcons]=\"showIcons\"></videos>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <about-us id=\"about-us\" [showIcons]=\"showIcons\"></about-us>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <contact-us id=\"contact-us\" [showIcons]=\"showIcons\"></contact-us>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n</main>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"adminModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"adminModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">ADMIN LOGIN</h5>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">USERNAME</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER USERNAME\"\r\n              (input)=\"userAuth.username = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.username\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">PASSWORD</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"password\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER PASSWORD\"\r\n              (input)=\"userAuth.password = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.password\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-1\"></div>\r\n          <small \r\n            class=\"col-sm-10\" \r\n            style=\"color: red\"\r\n            *ngIf=\"!validLogin && errorsEnabled\">\r\n            The username/password combination does exist in our records.\r\n          </small>\r\n          <div class=\"col-sm-1\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"disableErrors(); clearLogin();\">\r\n          CLOSE\r\n        </button>\r\n        <button \r\n          *ngIf=\"closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          data-dismiss=\"modal\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n        <button\r\n          *ngIf=\"!closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<header>\r\n  <nav class=\"navbar navbar-dark bg-dark navbar-expand-lg scrolling-navbar\">\r\n    <strong class=\"header nav-right\" style=\"color: white\">\r\n      3:33AM MULTIMEDIA COLLECTIVE\r\n    </strong>\r\n    <div class=\"navbar-collapse\" id=\"navbarSupportedContent\">\r\n      <ul class=\"navbar-nav mr-auto flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#artists\">ARTISTS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#videos\">VIDEOS</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#about-us\">ABOUT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a class=\"nav-link\" href=\"#contact-us\">CONTACT</a>\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"#\"\r\n            data-toggle=\"modal\"\r\n            data-target=\"#adminModal\"\r\n            (click)=\"newLogin();\"\r\n            >ADMIN</a\r\n          >\r\n        </li>\r\n      </ul>\r\n      <ul class=\"navbar-nav flex-direction\">\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-spotify\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-apple\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-facebook-official\" style=\"color:white\"\r\n              >&nbsp;</i\r\n            ></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-twitter\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n        <li class=\"nav-item nav-tab\">\r\n          <a\r\n            class=\"nav-link\"\r\n            href=\"https://www.instagram.com/official333am/?hl=en\"\r\n            target=\"_blank\"\r\n            ><i class=\"fa fa-instagram\" style=\"color:white\">&nbsp;</i></a\r\n          >\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n</header>\r\n<main>\r\n  <br />\r\n  <twitter-networking></twitter-networking>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <artists id=\"artists\" [showIcons]=\"showIcons\"></artists>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <videos id=\"videos\" [showIcons]=\"showIcons\"></videos>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <about-us id=\"about-us\" [showIcons]=\"showIcons\"></about-us>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <contact-us id=\"contact-us\" [showIcons]=\"showIcons\"></contact-us>\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n  <br /> <!-- YUCK FIX THIS -->\r\n</main>\r\n\r\n<!-- Modal -->\r\n<div\r\n  class=\"modal fade\"\r\n  style=\"margin-top: 5%;\"\r\n  id=\"adminModal\"\r\n  tabindex=\"-1\"\r\n  role=\"dialog\"\r\n  aria-labelledby=\"adminModalLabel\"\r\n  aria-hidden=\"true\"\r\n>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">ADMIN LOGIN</h5>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">USERNAME</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"text\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER USERNAME\"\r\n              (input)=\"userAuth.username = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.username\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group row\">\r\n          <label class=\"col-sm-3 col-form-label\">PASSWORD</label>\r\n          <div class=\"col-sm-9\">\r\n            <input\r\n              type=\"password\"\r\n              class=\"form-control\"\r\n              placeholder=\"ENTER PASSWORD\"\r\n              (input)=\"userAuth.password = $event.target.value\"\r\n              (focus)=\"flipFlag()\"\r\n              [value]=\"userAuth.password\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-1\"></div>\r\n          <small \r\n            class=\"col-sm-10\" \r\n            style=\"color: red\"\r\n            *ngIf=\"!validLogin && errorsEnabled\">\r\n            The username/password combination does exist in our records.\r\n          </small>\r\n          <div class=\"col-sm-1\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn\" data-dismiss=\"modal\" (click)=\"disableErrors(); clearLogin();\">\r\n          CLOSE\r\n        </button>\r\n        <button \r\n          *ngIf=\"closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          data-dismiss=\"modal\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n        <button\r\n          *ngIf=\"!closeEnabled\"\r\n          type=\"button\"\r\n          class=\"btn\"\r\n          (click)=\"authorizeAdmin()\"\r\n        >\r\n          LOGIN\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -74,7 +74,7 @@ module.exports = "<div class=\"container\">\r\n  <h3>\r\n    CONTACT\r\n    <i\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" [formGroup]=\"userForm\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-3 col-md-6\"><h3>TWITTER NETWORKING</h3></div>\r\n\t</div>\r\n\t<br>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tArtist\r\n\t\t\t</label>\r\n\t\t\t<input type=\"text\" id=\"artist\" name=\"artist\" class=\"form-control\" formControlName=\"artist\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tSong\r\n\t\t\t</label>\r\n\t\t\t<input type=\"text\" id=\"song\" name=\"song\" class=\"form-control\" formControlName=\"song\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tSearch Count\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"search_count\" name=\"search_count\" class=\"form-control\" formControlName=\"search_count\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tMinimum Likes\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_likes\" name=\"min_likes\" class=\"form-control\" formControlName=\"min_likes\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tMinimum Retweets\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_retweets\" name=\"min_retweets\" class=\"form-control\" formControlName=\"min_retweets\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tMinimum Followers\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_followers\" name=\"min_followers\" class=\"form-control\" formControlName=\"min_followers\">\r\n\t\t</div>\r\n\t</div>\r\n\t<br>\r\n\t<div class=\"row pull-right\">\r\n\t\t\t<button type=\"button\" class=\"btn\" (click)=\"clearAll()\" [disabled]=\"!submitButtonEnabled\">CLEAR</button>\r\n\t\t<button type=\"button\" class=\"btn\" (click)=\"submit()\" [disabled]=\"!submitButtonEnabled || !isFormValid\">SUBMIT</button>\r\n\t</div>\r\n</div>\r\n<div class=\"container hr-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<p *ngIf=\"resultJSON.length !== 0\">\r\n\t\t<em>\r\n\t\t\t{{ resultJSON.length }} SEARCH RESULTS\r\n\t\t</em>\r\n\t</p>\r\n\t<hr>\r\n</div>\r\n<div class=\"container result-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<div class=\"row results\" *ngFor=\"let tweet of resultJSON; let i = index\">\r\n\t\t<div class=\"col-md-12\">\r\n\t\t\t<p>\r\n\t\t\t\t<strong>\r\n\t\t\t\t\t{{ i + 1 }}. {{ tweet.name }}\r\n\t\t\t\t</strong>\r\n\t\t\t\t<em>\r\n\t\t\t\t\t{{ tweet.username }} ({{ tweet.followers }} Followers)\r\n\t\t\t\t</em>\r\n\t\t\t</p>\r\n\t\t\t<p>\r\n\t\t\t\t{{ tweet.tweet }}\r\n\t\t\t</p>\r\n\t\t\t<p>\r\n\t\t\t\t<em>\r\n\t\t\t\t{{ tweet.retweets }} Retweets | {{ tweet.likes }} Likes\r\n\t\t\t\t</em>\r\n\t\t\t</p>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n<div class=\"container hr-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<hr>\r\n</div>\r\n<div class=\"container dm-section\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-10\">\r\n\t\t\t<textarea rows=\"2\" style=\"width: 100%\" id=\"inital_message\" name=\"inital_message\" formControlName=\"inital_message\">\r\n\t\t\t</textarea>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<button type=\"button\" class=\"btn pull-right\">SEND MESSAGE</button>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"container\" [formGroup]=\"userForm\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-3 col-md-6\">\r\n\t\t\t<h3>TWITTER NETWORKING</h3>\r\n\t\t</div>\r\n\t</div>\r\n\t<br>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tArtist\r\n\t\t\t</label>\r\n\t\t\t<input type=\"text\" id=\"artist\" name=\"artist\" class=\"form-control\" formControlName=\"artist\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tSong\r\n\t\t\t</label>\r\n\t\t\t<input type=\"text\" id=\"song\" name=\"song\" class=\"form-control\" formControlName=\"song\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tSearch Count\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"search_count\" name=\"search_count\" class=\"form-control\" formControlName=\"search_count\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tMinimum Likes\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_likes\" name=\"min_likes\" class=\"form-control\" formControlName=\"min_likes\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tMinimum Retweets\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_retweets\" name=\"min_retweets\" class=\"form-control\" formControlName=\"min_retweets\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tMinimum Followers\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_followers\" name=\"min_followers\" class=\"form-control\" formControlName=\"min_followers\">\r\n\t\t</div>\r\n\t</div>\r\n\t<br>\r\n\t<div class=\"row pull-right\">\r\n\t\t<button type=\"button\" class=\"btn\" (click)=\"clearAll()\" [disabled]=\"!submitButtonEnabled\">CLEAR</button>\r\n\t\t<button type=\"button\" class=\"btn\" (click)=\"submit()\" [disabled]=\"!submitButtonEnabled || !isFormValid\">SUBMIT</button>\r\n\t</div>\r\n</div>\r\n<div class=\"container\" *ngIf=\"!submitButtonEnabled\">\r\n\t<span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\r\n\tSearching for {{ userForm.get('search_count').value - resultJSON.length }} more tweets...\r\n</div>\r\n<div class=\"container hr-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<p>\r\n\t\t<em>\r\n\t\t\t{{ resultJSON.length }} SEARCH RESULTS\r\n\t\t</em>\r\n\t</p>\r\n\t<hr>\r\n</div>\r\n<div class=\"container result-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<div class=\"row results\" *ngFor=\"let tweet of resultJSON; let i = index\">\r\n\t\t<div class=\"col-md-12\">\r\n\t\t\t<p>\r\n\t\t\t\t<strong>\r\n\t\t\t\t\t{{ i + 1 }}. {{ tweet.name }}\r\n\t\t\t\t</strong>\r\n\t\t\t\t<em>\r\n\t\t\t\t\t{{ tweet.username }} ({{ tweet.followers }} Followers)\r\n\t\t\t\t</em>\r\n\t\t\t</p>\r\n\t\t\t<p>\r\n\t\t\t\t{{ tweet.tweet }}\r\n\t\t\t</p>\r\n\t\t\t<p>\r\n\t\t\t\t<em>\r\n\t\t\t\t\t{{ tweet.retweets }} Retweets | {{ tweet.likes }} Likes\r\n\t\t\t\t</em>\r\n\t\t\t</p>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n<div class=\"container hr-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<hr>\r\n</div>\r\n<div class=\"container dm-section\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-10\">\r\n\t\t\t<textarea rows=\"2\" style=\"width: 100%\" id=\"inital_message\" name=\"inital_message\" formControlName=\"inital_message\">\r\n\t\t\t</textarea>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<button type=\"button\" class=\"btn pull-right\" (click)=\"sendMessage()\">SEND MESSAGE</button>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -637,15 +637,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _services_twitter_twitter_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/twitter/twitter.service */ "./src/app/services/twitter/twitter.service.ts");
 
 
 
 
 var TwitterNetworkingComponent = /** @class */ (function () {
-    function TwitterNetworkingComponent(formBuilder, http) {
+    function TwitterNetworkingComponent(formBuilder, twitterService) {
         this.formBuilder = formBuilder;
-        this.http = http;
+        this.twitterService = twitterService;
         this.resultJSON = [];
         this.submitButtonEnabled = true;
     }
@@ -666,7 +666,7 @@ var TwitterNetworkingComponent = /** @class */ (function () {
         if (!max_id) {
             this.resultJSON = [];
         }
-        this.getUsers({
+        this.twitterService.getUsers({
             artist: this.userForm.get('artist').value,
             song: this.userForm.get('song').value,
             search_count: this.userForm.get('search_count').value - this.resultJSON.length,
@@ -686,12 +686,15 @@ var TwitterNetworkingComponent = /** @class */ (function () {
             }
         });
     };
+    TwitterNetworkingComponent.prototype.sendMessage = function () {
+        this.twitterService.sendMessage({}).subscribe(function (res) {
+            alert(res);
+        });
+        ;
+    };
     TwitterNetworkingComponent.prototype.clearAll = function () {
         this.userForm.reset();
         this.resultJSON = [];
-    };
-    TwitterNetworkingComponent.prototype.getUsers = function (json) {
-        return this.http.post('https://official333am-server.firebaseapp.com/api/twitter/search', json);
     };
     Object.defineProperty(TwitterNetworkingComponent.prototype, "isFormValid", {
         get: function () {
@@ -702,7 +705,7 @@ var TwitterNetworkingComponent = /** @class */ (function () {
     });
     TwitterNetworkingComponent.ctorParameters = function () { return [
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+        { type: _services_twitter_twitter_service__WEBPACK_IMPORTED_MODULE_3__["TwitterService"] }
     ]; };
     TwitterNetworkingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -899,6 +902,55 @@ var FirebaseService = /** @class */ (function () {
         })
     ], FirebaseService);
     return FirebaseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/twitter/twitter.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/twitter/twitter.service.ts ***!
+  \*****************************************************/
+/*! exports provided: TwitterService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterService", function() { return TwitterService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+var TwitterService = /** @class */ (function () {
+    function TwitterService(http) {
+        this.http = http;
+        this.serverHost = 'https://official333am-server.firebaseapp.com';
+        if (window.location.href.indexOf('localhost')) {
+            this.serverHost = 'http://localhost:5000';
+        }
+    }
+    TwitterService.prototype.getUsers = function (json) {
+        return this.http.post(this.serverHost + '/api/twitter/search', json);
+    };
+    TwitterService.prototype.sendMessage = function (json) {
+        var json2 = {
+            userid: 3758444059,
+            message: 'i like bear too!'
+        };
+        return this.http.post(this.serverHost + '/api/twitter/direct_message', json2);
+    };
+    TwitterService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    ]; };
+    TwitterService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TwitterService);
+    return TwitterService;
 }());
 
 
