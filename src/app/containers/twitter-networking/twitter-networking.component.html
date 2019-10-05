@@ -20,25 +20,25 @@
 		</div>
 		<div class="col-md-2">
 			<label>
-				Search Count
+				Count
 			</label>
 			<input type="number" id="search_count" name="search_count" class="form-control" formControlName="search_count">
 		</div>
 		<div class="col-md-2">
 			<label>
-				Minimum Likes
+				Likes
 			</label>
 			<input type="number" id="min_likes" name="min_likes" class="form-control" formControlName="min_likes">
 		</div>
 		<div class="col-md-2">
 			<label>
-				Minimum Retweets
+				Retweets
 			</label>
 			<input type="number" id="min_retweets" name="min_retweets" class="form-control" formControlName="min_retweets">
 		</div>
 		<div class="col-md-2">
 			<label>
-				Minimum Followers
+				Followers
 			</label>
 			<input type="number" id="min_followers" name="min_followers" class="form-control" formControlName="min_followers">
 		</div>
@@ -51,7 +51,7 @@
 </div>
 <div class="container" *ngIf="!submitButtonEnabled">
 	<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-	Searching for {{ userForm.get('search_count').value - resultJSON.length }} more tweets...
+	Searching for more tweets...
 </div>
 <div class="container hr-container" *ngIf="resultJSON.length !== 0">
 	<p>
