@@ -77,7 +77,7 @@
 </header>
 <main>
   <br />
-  <twitter-networking></twitter-networking>
+  <twitter-networking *ngIf="showIcons.auth === 'admin'"></twitter-networking>
   <br /> <!-- YUCK FIX THIS -->
   <artists id="artists" [showIcons]="showIcons"></artists>
   <br /> <!-- YUCK FIX THIS -->
