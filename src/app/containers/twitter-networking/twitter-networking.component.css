@@ -19,3 +19,7 @@ p {
 .dm-section {
     padding-bottom: 30px !important;
 }
+
+.hr-container {
+    padding-bottom: 0px !important;
+}

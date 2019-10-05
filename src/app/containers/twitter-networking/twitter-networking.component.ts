@@ -57,6 +57,11 @@ export class TwitterNetworkingComponent implements OnInit {
     });
   }
 
+  clearAll() {
+    this.userForm.reset();
+    this.resultJSON = [];
+  }
+
   getUsers(json: any) {
     return this.http.post<any>('https://official333am-server.firebaseapp.com/api/twitter/search', json);
   }

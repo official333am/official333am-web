@@ -1,5 +1,9 @@
 <div class="container" [formGroup]="userForm">
 	<div class="row">
+		<div class="col-3 col-md-6"><h3>TWITTER NETWORKING</h3></div>
+	</div>
+	<br>
+	<div class="row">
 		<div class="col-md-2">
 			<label>
 				Artist
@@ -39,15 +43,18 @@
 	</div>
 	<br>
 	<div class="row pull-right">
+			<button type="button" class="btn" (click)="clearAll()" [disabled]="!submitButtonEnabled">CLEAR</button>
 		<button type="button" class="btn" (click)="submit()" [disabled]="!submitButtonEnabled || !isFormValid">SUBMIT</button>
 	</div>
 </div>
-<p *ngIf="resultJSON.length !== 0">
-	<em>
-		{{ resultJSON.length }} SEARCH RESULTS
-	</em>
-</p>
-<hr *ngIf="resultJSON.length !== 0">
+<div class="container hr-container" *ngIf="resultJSON.length !== 0">
+	<p *ngIf="resultJSON.length !== 0">
+		<em>
+			{{ resultJSON.length }} SEARCH RESULTS
+		</em>
+	</p>
+	<hr>
+</div>
 <div class="container result-container" *ngIf="resultJSON.length !== 0">
 	<div class="row results" *ngFor="let tweet of resultJSON; let i = index">
 		<div class="col-md-12">
@@ -70,11 +77,13 @@
 		</div>
 	</div>
 </div>
-<hr *ngIf="resultJSON.length !== 0">
+<div class="container hr-container" *ngIf="resultJSON.length !== 0">
+	<hr>
+</div>
 <div class="container dm-section" *ngIf="resultJSON.length !== 0">
 	<div class="row">
 		<div class="col-md-10">
-			<textarea rows="3" style="width: 100%" id="inital_message" name="inital_message" formControlName="inital_message">
+			<textarea rows="2" style="width: 100%" id="inital_message" name="inital_message" formControlName="inital_message">
 			</textarea>
 		</div>
 		<div class="col-md-2">
