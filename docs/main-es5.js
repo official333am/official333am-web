@@ -196,6 +196,7 @@ var AppComponent = /** @class */ (function () {
                         }
                         return [3 /*break*/, 4];
                     case 3:
+                        sessionStorage.clear();
                         this.validLogin = false;
                         this.closeEnabled = false;
                         this.clearLogin();

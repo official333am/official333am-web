@@ -51,6 +51,7 @@ export class AppComponent {
         $("#adminModal").modal("toggle");
       }
     } else {
+      sessionStorage.clear();
       this.validLogin = false;
       this.closeEnabled = false;
       this.clearLogin();

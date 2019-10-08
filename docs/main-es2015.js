@@ -184,6 +184,7 @@ let AppComponent = class AppComponent {
                 }
             }
             else {
+                sessionStorage.clear();
                 this.validLogin = false;
                 this.closeEnabled = false;
                 this.clearLogin();
