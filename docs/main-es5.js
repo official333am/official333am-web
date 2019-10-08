@@ -74,7 +74,7 @@ module.exports = "<div class=\"container\">\r\n  <h3>\r\n    CONTACT\r\n    <i\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" [formGroup]=\"userForm\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-3 col-md-6\">\r\n\t\t\t<h3>TWITTER NETWORKING</h3>\r\n\t\t</div>\r\n\t</div>\r\n\t<br>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tArtist\r\n\t\t\t</label>\r\n\t\t\t<input type=\"text\" id=\"artist\" name=\"artist\" class=\"form-control\" formControlName=\"artist\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tSong\r\n\t\t\t</label>\r\n\t\t\t<input type=\"text\" id=\"song\" name=\"song\" class=\"form-control\" formControlName=\"song\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tCount\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"search_count\" name=\"search_count\" class=\"form-control\" formControlName=\"search_count\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tLikes\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_likes\" name=\"min_likes\" class=\"form-control\" formControlName=\"min_likes\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tRetweets\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_retweets\" name=\"min_retweets\" class=\"form-control\" formControlName=\"min_retweets\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tFollowers\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_followers\" name=\"min_followers\" class=\"form-control\" formControlName=\"min_followers\">\r\n\t\t</div>\r\n\t</div>\r\n\t<br>\r\n\t<div class=\"row pull-right\">\r\n\t\t<button type=\"button\" class=\"btn\" (click)=\"clearAll()\" [disabled]=\"!submitButtonEnabled\">CLEAR</button>\r\n\t\t<button type=\"button\" class=\"btn\" (click)=\"submit()\" [disabled]=\"!submitButtonEnabled || !isFormValid\">SUBMIT</button>\r\n\t</div>\r\n</div>\r\n<div class=\"container\" *ngIf=\"!submitButtonEnabled\">\r\n\t<span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\r\n\tSearching Page {{ pageCount }} for more tweets...\r\n</div>\r\n<div class=\"container hr-container\" *ngIf=\"resultJSON.length !== 0 || errorReason !== ''\">\r\n\t<p>\r\n\t\t<em>\r\n\t\t\t{{ resultJSON.length }} SEARCH RESULTS \r\n\t\t</em>\r\n\t\t<em *ngIf=\"errorReason !== ''\">\r\n\t\t\t({{ errorReason | uppercase }})\r\n\t\t</em>\r\n\t</p>\r\n\t<hr>\r\n</div>\r\n<div class=\"container result-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<div class=\"row results\" *ngFor=\"let tweet of resultJSON; let i = index\">\r\n\t\t<div class=\"col-md-12\">\r\n\t\t\t<p>\r\n\t\t\t\t<strong>\r\n\t\t\t\t\t{{ i + 1 }}. {{ tweet.name }}\r\n\t\t\t\t</strong>\r\n\t\t\t\t<em>\r\n\t\t\t\t\t{{ tweet.username }} ({{ tweet.followers }} Followers)\r\n\t\t\t\t</em>\r\n\t\t\t</p>\r\n\t\t\t<p>\r\n\t\t\t\t{{ tweet.tweet }}\r\n\t\t\t</p>\r\n\t\t\t<p>\r\n\t\t\t\t<em>\r\n\t\t\t\t\t{{ tweet.retweets }} Retweets | {{ tweet.likes }} Likes\r\n\t\t\t\t</em>\r\n\t\t\t</p>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n<div class=\"container hr-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<hr>\r\n</div>\r\n<div class=\"container dm-section\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-10\">\r\n\t\t\t<textarea rows=\"2\" style=\"width: 100%\" id=\"inital_message\" name=\"inital_message\" formControlName=\"inital_message\">\r\n\t\t\t</textarea>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<button type=\"button\" class=\"btn pull-right\" (click)=\"sendMessage()\">SEND MESSAGE</button>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"container\" [formGroup]=\"userForm\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-3 col-md-6\">\r\n\t\t\t<h3>TWITTER NETWORKING</h3>\r\n\t\t</div>\r\n\t</div>\r\n\t<br>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tArtist\r\n\t\t\t</label>\r\n\t\t\t<input type=\"text\" id=\"artist\" name=\"artist\" class=\"form-control\" formControlName=\"artist\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tSong\r\n\t\t\t</label>\r\n\t\t\t<input type=\"text\" id=\"song\" name=\"song\" class=\"form-control\" formControlName=\"song\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tCount\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"search_count\" name=\"search_count\" class=\"form-control\" formControlName=\"search_count\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tLikes\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_likes\" name=\"min_likes\" class=\"form-control\" formControlName=\"min_likes\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tRetweets\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_retweets\" name=\"min_retweets\" class=\"form-control\" formControlName=\"min_retweets\">\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<label>\r\n\t\t\t\tFollowers\r\n\t\t\t</label>\r\n\t\t\t<input type=\"number\" id=\"min_followers\" name=\"min_followers\" class=\"form-control\" formControlName=\"min_followers\">\r\n\t\t</div>\r\n\t</div>\r\n\t<br>\r\n\t<div class=\"row pull-right\">\r\n\t\t<button type=\"button\" class=\"btn\" (click)=\"clearAll()\" [disabled]=\"!submitButtonEnabled\">CLEAR</button>\r\n\t\t<button type=\"button\" class=\"btn\" (click)=\"submit(false)\" [disabled]=\"!submitButtonEnabled || !isFormValid\">SUBMIT</button>\r\n\t</div>\r\n</div>\r\n<div class=\"container\" *ngIf=\"!submitButtonEnabled\">\r\n\t<span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\r\n\tSearching Page {{ pageCount }} for more tweets about {{ userForm.get('song').value }} by {{ userForm.get('artist').value }}... \r\n</div>\r\n<div class=\"container hr-container\" *ngIf=\"resultJSON.length !== 0 || errorReason !== ''\">\r\n\t<p>\r\n\t\t<em>\r\n\t\t\t{{ resultJSON.length }} SEARCH RESULTS \r\n\t\t</em>\r\n\t\t<em *ngIf=\"errorReason !== ''\">\r\n\t\t\t({{ errorReason | uppercase }})\r\n\t\t</em>\r\n\t</p>\r\n\t<hr>\r\n</div>\r\n<div class=\"container result-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<div class=\"row results\" *ngFor=\"let tweet of resultJSON; let i = index\">\r\n\t\t<div class=\"col-md-12\">\r\n\t\t\t<p>\r\n\t\t\t\t<strong>\r\n\t\t\t\t\t{{ i + 1 }}. {{ tweet.name }}\r\n\t\t\t\t</strong>\r\n\t\t\t\t<em>\r\n\t\t\t\t\t{{ tweet.username }} ({{ tweet.followers }} Followers)\r\n\t\t\t\t</em>\r\n\t\t\t</p>\r\n\t\t\t<p>\r\n\t\t\t\t{{ tweet.tweet }}\r\n\t\t\t</p>\r\n\t\t\t<p>\r\n\t\t\t\t<em>\r\n\t\t\t\t\t{{ tweet.retweets }} Retweets | {{ tweet.likes }} Likes\r\n\t\t\t\t</em>\r\n\t\t\t</p>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n<div class=\"container hr-container\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<hr>\r\n</div>\r\n<div class=\"container dm-section\" *ngIf=\"resultJSON.length !== 0\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-10\">\r\n\t\t\t<textarea rows=\"2\" style=\"width: 100%\" id=\"inital_message\" name=\"inital_message\" formControlName=\"inital_message\">\r\n\t\t\t</textarea>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<button type=\"button\" class=\"btn pull-right\" (click)=\"sendMessage()\">SEND MESSAGE</button>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -650,14 +650,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _services_twitter_twitter_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/twitter/twitter.service */ "./src/app/services/twitter/twitter.service.ts");
+/* harmony import */ var _services_spotify_spotify_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/spotify/spotify.service */ "./src/app/services/spotify/spotify.service.ts");
+
 
 
 
 
 var TwitterNetworkingComponent = /** @class */ (function () {
-    function TwitterNetworkingComponent(formBuilder, twitterService) {
+    function TwitterNetworkingComponent(formBuilder, twitterService, spotifyService) {
         this.formBuilder = formBuilder;
         this.twitterService = twitterService;
+        this.spotifyService = spotifyService;
         this.resultJSON = [];
         this.submitButtonEnabled = true;
         this.pageCount = 0;
@@ -674,11 +677,16 @@ var TwitterNetworkingComponent = /** @class */ (function () {
             inital_message: ['']
         });
     };
-    TwitterNetworkingComponent.prototype.submit = function (max_id) {
+    TwitterNetworkingComponent.prototype.submit = function (related, max_id) {
         var _this = this;
         this.submitButtonEnabled = false;
-        if (!max_id) {
+        this.userForm.disable();
+        if (!max_id && !related) {
             this.resultJSON = [];
+            this.pageCount = 0;
+            this.errorReason = '';
+        }
+        else if (!max_id && related) {
             this.pageCount = 0;
             this.errorReason = '';
         }
@@ -697,21 +705,45 @@ var TwitterNetworkingComponent = /** @class */ (function () {
                     _this.resultJSON.push(element);
                 });
                 if (_this.resultJSON.length < _this.userForm.get('search_count').value) {
-                    _this.submit(res.max_id);
+                    _this.submit(false, res.max_id);
                 }
                 else {
                     _this.submitButtonEnabled = true;
+                    _this.userForm.enable();
                 }
             }
             else {
-                _this.submitButtonEnabled = true;
-                _this.errorReason = res.data[0].message;
+                if (res.data.length !== 0) {
+                    _this.submitButtonEnabled = true;
+                    _this.userForm.enable();
+                    _this.errorReason = res.data[0].message;
+                }
+                else {
+                    _this.errorReason = res.error;
+                    _this.addRelatedArtist();
+                }
+            }
+        });
+    };
+    TwitterNetworkingComponent.prototype.addRelatedArtist = function () {
+        var _this = this;
+        this.spotifyService.getArtistId({
+            artist: this.userForm.get('artist').value,
+            song: this.userForm.get('song').value,
+        }).subscribe(function (res) {
+            if (res) {
+                _this.userForm.get('artist').setValue(res.artist);
+                _this.userForm.get('song').setValue(res.song);
+                _this.submit(true);
+            }
+            else {
+                alert('sad');
             }
         });
     };
     TwitterNetworkingComponent.prototype.sendMessage = function () {
         this.twitterService.sendMessage({}).subscribe(function (res) {
-            alert(res);
+            console.log(res);
         });
         ;
     };
@@ -728,7 +760,8 @@ var TwitterNetworkingComponent = /** @class */ (function () {
     });
     TwitterNetworkingComponent.ctorParameters = function () { return [
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-        { type: _services_twitter_twitter_service__WEBPACK_IMPORTED_MODULE_3__["TwitterService"] }
+        { type: _services_twitter_twitter_service__WEBPACK_IMPORTED_MODULE_3__["TwitterService"] },
+        { type: _services_spotify_spotify_service__WEBPACK_IMPORTED_MODULE_4__["SpotifyService"] }
     ]; };
     TwitterNetworkingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -925,6 +958,48 @@ var FirebaseService = /** @class */ (function () {
         })
     ], FirebaseService);
     return FirebaseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/spotify/spotify.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/spotify/spotify.service.ts ***!
+  \*****************************************************/
+/*! exports provided: SpotifyService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpotifyService", function() { return SpotifyService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+var SpotifyService = /** @class */ (function () {
+    function SpotifyService(http) {
+        this.http = http;
+        this.serverHost = 'https://official333am-server.firebaseapp.com';
+        if (window.location.href.indexOf('localhost') !== -1) {
+            this.serverHost = 'http://localhost:5000';
+        }
+    }
+    SpotifyService.prototype.getArtistId = function (json) {
+        return this.http.post(this.serverHost + '/api/spotify/artist_id', json);
+    };
+    SpotifyService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    ]; };
+    SpotifyService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], SpotifyService);
+    return SpotifyService;
 }());
 
 

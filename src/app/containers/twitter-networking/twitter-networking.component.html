@@ -46,12 +46,12 @@
 	<br>
 	<div class="row pull-right">
 		<button type="button" class="btn" (click)="clearAll()" [disabled]="!submitButtonEnabled">CLEAR</button>
-		<button type="button" class="btn" (click)="submit()" [disabled]="!submitButtonEnabled || !isFormValid">SUBMIT</button>
+		<button type="button" class="btn" (click)="submit(false)" [disabled]="!submitButtonEnabled || !isFormValid">SUBMIT</button>
 	</div>
 </div>
 <div class="container" *ngIf="!submitButtonEnabled">
 	<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-	Searching Page {{ pageCount }} for more tweets...
+	Searching Page {{ pageCount }} for more tweets about {{ userForm.get('song').value }} by {{ userForm.get('artist').value }}... 
 </div>
 <div class="container hr-container" *ngIf="resultJSON.length !== 0 || errorReason !== ''">
 	<p>
