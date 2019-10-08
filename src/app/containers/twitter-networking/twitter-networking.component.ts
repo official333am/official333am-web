@@ -11,6 +11,8 @@ export class TwitterNetworkingComponent implements OnInit {
   userForm: FormGroup;
   resultJSON = [];
   submitButtonEnabled = true;
+  pageCount = 0;
+  errorReason = '';
 
   constructor(
     public formBuilder: FormBuilder,
@@ -19,12 +21,12 @@ export class TwitterNetworkingComponent implements OnInit {
 
   ngOnInit() {
     this.userForm = this.formBuilder.group({
-  		artist: ['', Validators.required],
-  		song: ['', Validators.required],
-      search_count: ['', Validators.required],
-      min_likes: ['', Validators.required],
-      min_retweets: ['', Validators.required],
-      min_followers: ['', Validators.required],
+  		artist: ['blackbear', Validators.required],
+  		song: ['hot girl bummer', Validators.required],
+      search_count: ['100', Validators.required],
+      min_likes: ['30', Validators.required],
+      min_retweets: ['0', Validators.required],
+      min_followers: ['1000', Validators.required],
       inital_message: ['']
   	});
   }
@@ -34,7 +36,11 @@ export class TwitterNetworkingComponent implements OnInit {
 
     if (!max_id) {
       this.resultJSON = [];
+      this.pageCount = 0;
+      this.errorReason = '';
     }
+
+    this.pageCount++;
 
     this.twitterService.getUsers({
       artist: this.userForm.get('artist').value,
@@ -45,14 +51,19 @@ export class TwitterNetworkingComponent implements OnInit {
       min_followers: this.userForm.get('min_followers').value,
       max_id: max_id
     }).subscribe(res => {
-      res.data.forEach(element => {
-        this.resultJSON.push(element);
-      });
+      if (res.max_id != -1) {
+        res.data.forEach(element => {
+          this.resultJSON.push(element);
+        });
 
-      if (this.resultJSON.length < this.userForm.get('search_count').value) {
-        this.submit(res.max_id);
+        if (this.resultJSON.length < this.userForm.get('search_count').value) {
+          this.submit(res.max_id);
+        } else {
+          this.submitButtonEnabled = true;
+        }
       } else {
         this.submitButtonEnabled = true;
+        this.errorReason = res.data[0].message;
       }
     });
   }

@@ -24,20 +24,32 @@ export class AppComponent {
       username: 'none',
       auth: 'basic'
     };
+
+    if (sessionStorage.getItem("username333") && sessionStorage.getItem("password333")) {
+      this.userAuth = {
+        username: sessionStorage.getItem("username333"),
+        password: sessionStorage.getItem("password333")
+      };
+
+      this.authorizeAdmin();
+    }
   }
 
-  async authorizeAdmin() {
+  async authorizeAdmin(setting?: number) {
     this.enableErrors();
 
     if (await this.firebaseService.authenticate(this.userAuth) !== -1) {
       this.showIcons = await this.firebaseService.authenticate(this.userAuth);
-
+      sessionStorage.setItem("username333", this.userAuth.username);
+      sessionStorage.setItem("password333", this.userAuth.password);
       this.validLogin = true;
       this.closeEnabled = true;
       this.clearLogin();
       this.disableErrors();
 
-      $("#adminModal").modal("toggle");
+      if (setting) {
+        $("#adminModal").modal("toggle");
+      }
     } else {
       this.validLogin = false;
       this.closeEnabled = false;

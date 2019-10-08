@@ -51,12 +51,15 @@
 </div>
 <div class="container" *ngIf="!submitButtonEnabled">
 	<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-	Searching for more tweets...
+	Searching Page {{ pageCount }} for more tweets...
 </div>
-<div class="container hr-container" *ngIf="resultJSON.length !== 0">
+<div class="container hr-container" *ngIf="resultJSON.length !== 0 || errorReason !== ''">
 	<p>
 		<em>
-			{{ resultJSON.length }} SEARCH RESULTS
+			{{ resultJSON.length }} SEARCH RESULTS 
+		</em>
+		<em *ngIf="errorReason !== ''">
+			({{ errorReason | uppercase }})
 		</em>
 	</p>
 	<hr>
