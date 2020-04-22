@@ -10,6 +10,7 @@ import { ContactUsComponent } from './containers/contact-us/contact-us.component
 import { AboutUsComponent } from './containers/about-us/about-us.component';
 import { VideosComponent } from './containers/videos/videos.component';
 import { TwitterNetworkingComponent } from './containers/twitter-networking/twitter-networking.component';
+import { SpotlightPanelComponent } from './containers/spotlight-panel/spotlight-panel.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TwitterNetworkingComponent } from './containers/twitter-networking/twit
     AboutUsComponent,
     VideosComponent,
     TwitterNetworkingComponent,
+    SpotlightPanelComponent,
   ],
   imports: [
     BrowserModule,

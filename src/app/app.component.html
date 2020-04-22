@@ -17,59 +17,35 @@
         <li class="nav-item nav-tab">
           <a class="nav-link" href="#contact-us">CONTACT</a>
         </li>
-        <li class="nav-item nav-tab">
-          <a
-            class="nav-link"
-            href="#"
-            data-toggle="modal"
-            data-target="#adminModal"
-            (click)="newLogin();"
-            >ADMIN</a
-          >
-        </li>
+        <!-- <li class="nav-item nav-tab">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#adminModal" (click)="newLogin();">ADMIN</a>
+        </li> -->
       </ul>
       <ul class="navbar-nav flex-direction">
         <li class="nav-item nav-tab">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/official333am/?hl=en"
-            target="_blank"
-            ><i class="fa fa-spotify" style="color:white">&nbsp;</i></a
-          >
+          <a class="nav-link" href="https://www.instagram.com/official333am/?hl=en" target="_blank">
+            <i class="fa fa-spotify" style="color:white">&nbsp;</i>
+          </a>
         </li>
         <li class="nav-item nav-tab">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/official333am/?hl=en"
-            target="_blank"
-            ><i class="fa fa-apple" style="color:white">&nbsp;</i></a
-          >
+          <a class="nav-link" href="https://www.instagram.com/official333am/?hl=en" target="_blank">
+            <i class="fa fa-apple" style="color:white">&nbsp;</i>
+          </a>
         </li>
         <li class="nav-item nav-tab">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/official333am/?hl=en"
-            target="_blank"
-            ><i class="fa fa-facebook-official" style="color:white"
-              >&nbsp;</i
-            ></a
-          >
+          <a class="nav-link" href="https://www.instagram.com/official333am/?hl=en" target="_blank">
+            <i class="fa fa-facebook-official" style="color:white">&nbsp;</i>
+          </a>
         </li>
         <li class="nav-item nav-tab">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/official333am/?hl=en"
-            target="_blank"
-            ><i class="fa fa-twitter" style="color:white">&nbsp;</i></a
-          >
+          <a class="nav-link" href="https://www.instagram.com/official333am/?hl=en" target="_blank">
+            <i class="fa fa-twitter" style="color:white">&nbsp;</i>
+          </a>
         </li>
         <li class="nav-item nav-tab">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/official333am/?hl=en"
-            target="_blank"
-            ><i class="fa fa-instagram" style="color:white">&nbsp;</i></a
-          >
+          <a class="nav-link" href="https://www.instagram.com/official333am/?hl=en" target="_blank">
+            <i class="fa fa-instagram" style="color:white">&nbsp;</i>
+          </a>
         </li>
       </ul>
     </div>
@@ -78,34 +54,30 @@
 <main>
   <br />
   <twitter-networking *ngIf="showIcons.auth === 'admin'"></twitter-networking>
-  <br /> <!-- YUCK FIX THIS -->
+  <br />
+  <spotlight-panel id="spotlight-panel"></spotlight-panel>
+  <br />
+  <br />
   <artists id="artists" [showIcons]="showIcons"></artists>
-  <br /> <!-- YUCK FIX THIS -->
-  <br /> <!-- YUCK FIX THIS -->
+  <br />
+  <br />
   <videos id="videos" [showIcons]="showIcons"></videos>
-  <br /> <!-- YUCK FIX THIS -->
-  <br /> <!-- YUCK FIX THIS -->
+  <br />
+  <br />
   <about-us id="about-us" [showIcons]="showIcons"></about-us>
-  <br /> <!-- YUCK FIX THIS -->
-  <br /> <!-- YUCK FIX THIS -->
+  <br />
+  <br />
   <contact-us id="contact-us" [showIcons]="showIcons"></contact-us>
-  <br /> <!-- YUCK FIX THIS -->
-  <br /> <!-- YUCK FIX THIS -->
-  <br /> <!-- YUCK FIX THIS -->
-  <br /> <!-- YUCK FIX THIS -->
-  <br /> <!-- YUCK FIX THIS -->
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 </main>
 
 <!-- Modal -->
-<div
-  class="modal fade"
-  style="margin-top: 5%;"
-  id="adminModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="adminModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" style="margin-top: 5%;" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="adminModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -115,35 +87,20 @@
         <div class="form-group row">
           <label class="col-sm-3 col-form-label">USERNAME</label>
           <div class="col-sm-9">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="ENTER USERNAME"
-              (input)="userAuth.username = $event.target.value"
-              (focus)="flipFlag()"
-              [value]="userAuth.username"
-            />
+            <input type="text" class="form-control" placeholder="ENTER USERNAME" (input)="userAuth.username = $event.target.value" (focus)="flipFlag()"
+              [value]="userAuth.username" />
           </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-3 col-form-label">PASSWORD</label>
           <div class="col-sm-9">
-            <input
-              type="password"
-              class="form-control"
-              placeholder="ENTER PASSWORD"
-              (input)="userAuth.password = $event.target.value"
-              (focus)="flipFlag()"
-              [value]="userAuth.password"
-            />
+            <input type="password" class="form-control" placeholder="ENTER PASSWORD" (input)="userAuth.password = $event.target.value"
+              (focus)="flipFlag()" [value]="userAuth.password" />
           </div>
         </div>
         <div class="row">
           <div class="col-sm-1"></div>
-          <small 
-            class="col-sm-10" 
-            style="color: red"
-            *ngIf="!validLogin && errorsEnabled">
+          <small class="col-sm-10" style="color: red" *ngIf="!validLogin && errorsEnabled">
             The username/password combination does exist in our records.
           </small>
           <div class="col-sm-1"></div>
@@ -153,21 +110,10 @@
         <button type="button" class="btn" data-dismiss="modal" (click)="disableErrors(); clearLogin();">
           CLOSE
         </button>
-        <button 
-          *ngIf="closeEnabled"
-          type="button"
-          class="btn"
-          data-dismiss="modal"
-          (click)="authorizeAdmin(1)"
-        >
+        <button *ngIf="closeEnabled" type="button" class="btn" data-dismiss="modal" (click)="authorizeAdmin(1)">
           LOGIN
         </button>
-        <button
-          *ngIf="!closeEnabled"
-          type="button"
-          class="btn"
-          (click)="authorizeAdmin(1)"
-        >
+        <button *ngIf="!closeEnabled" type="button" class="btn" (click)="authorizeAdmin(1)">
           LOGIN
         </button>
       </div>
