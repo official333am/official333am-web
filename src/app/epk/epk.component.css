@@ -14,7 +14,7 @@
     height: max-content;
 }
 
-.col-3, .col-4, .col-6 {
+.col-3, .col-4, .col-6, .col-md-6 {
     padding: 38px;
     height: max-content;
 }
@@ -36,12 +36,13 @@ h3, p {
     margin-top: -30rem;
 }
 
-.sticky-top {
-    top: 1% !important;
+.sticky-md-top {
+    top: 3% !important;
 }
 
 .social-media-icons {
     font-size: 2rem !important;
+    margin-bottom: 0 !important;
 }
 
 .ml-custom {
