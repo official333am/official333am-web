@@ -16,7 +16,12 @@ h1 {
     color: white !important;
 }
 
-h2, h3 {
+h2 {
+    font-family: "Proxima Nova Black" !important;
+    color: black !important;
+}
+
+h3 {
     font-family: "Proxima Nova Black" !important;
     color: white !important;
 }
