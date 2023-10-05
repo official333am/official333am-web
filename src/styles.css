@@ -39,3 +39,7 @@ p {
     overflow: auto !important;
     height: 500px !important
 }
+
+body {
+    background-color: black !important;
+}
