@@ -56,3 +56,9 @@ h3, p {
 .attribute-margin {
     margin-top: 6rem !important;    
 }
+
+.gallery-border {
+    border-style: solid;
+    border-width: 10px;
+    border-color: white;
+}

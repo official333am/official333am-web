@@ -31,11 +31,6 @@ p {
     background-color: rgba(0,0,0,0) !important;
 }
 
-.bg-dark.active {
-    background-color: white !important;
-    transition: background-color 200ms linear !important;
-}
-
 .mt-custom {
     margin-top: 8rem !important;
 }
