@@ -43,3 +43,11 @@ p {
 body {
     background-color: black !important;
 }
+
+.no-left-padding {
+    padding-left: 0 !important;
+}
+
+.name-header {
+    font-size: 70px !important;
+}

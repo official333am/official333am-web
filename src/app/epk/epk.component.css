@@ -8,9 +8,24 @@
     /* height: 100vh; */
 }
 
-.col-3 {
+.bio-block {
     background: white;
     padding: 38px;
+    height: max-content;
+}
+
+.col-3, .col-4, .col-6 {
+    padding: 38px;
+    height: max-content;
+}
+
+.col-12 {
+    padding: 38px;
+    height: max-content;
+}
+
+.white-text {
+    color: white !important;
 }
 
 h3, p {
@@ -18,5 +33,25 @@ h3, p {
 }
 
 .margin-overlay {
-    margin-top: -22rem;
+    margin-top: -30rem;
+}
+
+.sticky-top {
+    top: 1% !important;
+}
+
+.social-media-icons {
+    font-size: 2rem !important;
+}
+
+.ml-custom {
+    margin-left: 1rem;
+}
+
+.fa {
+    color: black !important
+}
+
+.attribute-margin {
+    margin-top: 6rem !important;    
 }
