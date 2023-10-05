@@ -1,0 +1,14 @@
+.epk-bg  {
+    background-image: url("./../../assets/images/_N8A1637.jpg");
+    /* background-color: maroon; */
+    background-size: cover;
+    background-attachment: fixed;
+    /* width: 100%; */
+    /* height: 100%; */
+    height: 100vh;
+}
+
+.col-3 {
+    background: black;
+    padding: 38px;
+}

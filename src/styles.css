@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Proxima Nova";
+    src: local("Proxima Nova"), url(./assets/fonts/Proxima-Nova-Regular/Proxima-Nova-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Proxima Nova Black";
+    src: local("Proxima Nova Black"), url(./assets/fonts/Proxima-Nova-Black/Proxima-Nova-Black.ttf) format("truetype");
+}
+
+h1 {
+    font-family: "Proxima Nova Black" !important;
+    font-size: 50px !important;
+    color: white !important;
+}
+
+h2, h3 {
+    font-family: "Proxima Nova Black" !important;
+    color: white !important;
+}
+
+
+p {
+    font-family: "Proxima Nova" !important;
+    color: white !important;
+}
+
+.bg-dark {
+    background-color: white !important;
+}
+
+.mt-custom {
+    margin-top: 8rem !important;
+}
+
+.overflow-custom {
+    overflow: auto !important;
+    height: 500px !important
+}
