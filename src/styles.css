@@ -58,3 +58,12 @@ body {
 .name-header {
     font-size: 70px !important;
 }
+
+.social-media-icons {
+    font-size: 2rem !important;
+    margin-bottom: 0 !important;
+}
+
+.ml-custom {
+    margin-left: 1rem;
+}
