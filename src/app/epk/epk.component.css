@@ -40,6 +40,10 @@ h3, p {
     margin-top: -124%;
 }
 
+.gallery-header {
+    padding-bottom: 0;
+}
+
 .sticky-md-top {
     top: 5% ;
 }
