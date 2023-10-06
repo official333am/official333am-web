@@ -41,8 +41,10 @@ h3, p {
 }
 
 .sticky-md-top {
-    top: 3% !important;
+    top: 5% ;
 }
+
+
 
 .social-media-icons {
     font-size: 2rem !important;
@@ -71,4 +73,12 @@ h3, p {
     position:fixed;
     bottom:0px;
     left:50%;
+}
+
+@media all and (max-width: 600px)
+{
+    /* styles here */
+    .mobile-mt {
+        margin-top: 80% !important;
+    }
 }
