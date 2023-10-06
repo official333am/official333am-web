@@ -81,4 +81,8 @@ h3, p {
     .mobile-mt {
         margin-top: 80% !important;
     }
+
+    .mobile-header {
+        margin-top: 13%;
+    }
 }

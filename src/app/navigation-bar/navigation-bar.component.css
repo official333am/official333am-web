@@ -6,3 +6,11 @@
 /* .nav-bar {
     background-color:blue !important;
 } */
+
+@media all and (max-width: 600px)
+{
+    /* styles here */
+    .mobile-position {
+        justify-content: center !important;
+    }
+}
