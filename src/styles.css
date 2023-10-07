@@ -21,6 +21,11 @@ h2 {
     color: black !important;
 }
 
+span {
+    font-family: "Proxima Nova" !important;
+    color: black !important;
+}
+
 h3 {
     font-family: "Proxima Nova Black" !important;
     color: white !important;
@@ -40,6 +45,10 @@ p {
 
 .mt-custom {
     margin-top: 8rem !important;
+}
+
+.mr-custom {
+    margin-right: 1rem !important;
 }
 
 .overflow-custom {
