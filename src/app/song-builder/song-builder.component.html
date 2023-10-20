@@ -1,0 +1,29 @@
+<br><br><br><br><br><br>
+
+<div class="container margin-overlay">
+    <div class="row mb-5">
+        <div class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
+            <h1>SONG BUILDER</h1>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
+            <button (click)="getRandomTempo(); getRandomKey(); flipArtist(); shuffleArray();">PRESS ME TO GET A PRODUCTION PLAN</button>
+            <br>
+            <br>
+            <p *ngIf="tempo">TEMPO: {{ tempo }}</p>
+            <p *ngIf="key">KEY: {{ key }}</p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div *ngIf="commonInstruments" class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
+            <ng-container *ngFor="let instrument of commonInstruments">
+                <h3>{{ instrument }}</h3>
+                <p>BY {{ flipArtist() }}</p>
+                <br>
+            </ng-container>
+        </div>
+    </div>
+</div>
