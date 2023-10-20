@@ -89,7 +89,18 @@ export class SongBuilderComponent {
 
   public flipArtist() {
     if (!this.currentArtist) {
-      this.currentArtist = ['BLASÉ','MIKEWAVE'][Math.floor(Math.random() * 2)]
+      const listOfArtist = ['BLASÉ','MIKEWAVE'];
+
+      var m = listOfArtist.length, t, i;
+  
+      while (m) {    
+      i = Math.floor(Math.random() * m--);
+      t = listOfArtist[m];
+      listOfArtist[m] = listOfArtist[i];
+      listOfArtist[i] = t;
+      }
+  
+      this.currentArtist = listOfArtist[0];
     }
     else if (this.currentArtist === 'BLASÉ') {
       this.currentArtist = 'MIKEWAVE'
