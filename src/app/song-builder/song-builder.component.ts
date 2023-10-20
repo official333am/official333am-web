@@ -21,18 +21,30 @@ export class SongBuilderComponent {
 
   public getRandomKey() {
     const commonChords = [
-      "C Major / A Natural Minor",
-      "D Major / B Natural Minor",
-      "E Major / C# Natural Minor",
-      "F Major / D Natural Minor",
-      "G Major / E Natural Minor",
-      "A Major / F# Natural Minor",
-      "Bb Major / G Natural Minor",
-      "C# Major / A# Natural Minor",
-      "D# Major / B# (or C) Natural Minor",
-      "Gb Major / E♭ Natural Minor",
-      "Ab Major / F Natural Minor",
-      "Bb Major / G Natural Minor"
+      "C Major",
+      "D Major",
+      "E Major",
+      "F Major",
+      "G Major",
+      "A Major",
+      "Bb Major",
+      "C# Major",
+      "D# Major",
+      "Gb Major",
+      "Ab Major",
+      "Bb Major",
+      "A Natural Minor",
+      "B Natural Minor",
+      "C# Natural Minor",
+      "D Natural Minor",
+      "E Natural Minor",
+      "F# Natural Minor",
+      "G Natural Minor",
+      "A# Natural Minor",
+      "B# (or C) Natural Minor",
+      "E♭ Natural Minor",
+      "F Natural Minor",
+      "G Natural Minor"
     ]
 
     const randomKey = commonChords[Math.floor(Math.random() * commonChords.length)];

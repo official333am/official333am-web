@@ -4,21 +4,24 @@
     <div class="row mb-5">
         <div class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
             <h1>SONG BUILDER</h1>
+            <button (click)="getRandomTempo(); getRandomKey(); flipArtist(); shuffleArray();">PRESS ME TO GET A RANDOM PRODUCTION PLAN</button>
         </div>
     </div>
 
-    <div class="row mb-5">
+    <div *ngIf="tempo" class="row mb-5">
         <div class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
-            <button (click)="getRandomTempo(); getRandomKey(); flipArtist(); shuffleArray();">PRESS ME TO GET A PRODUCTION PLAN</button>
             <br>
+            <h3>TEMPO</h3>
+            <p>{{ tempo }}</p>
             <br>
-            <p *ngIf="tempo">TEMPO: {{ tempo }}</p>
-            <p *ngIf="key">KEY: {{ key }}</p>
+            <h3>KEY</h3>
+            <p>{{ key }}</p>
         </div>
     </div>
 
     <div class="row mb-5">
         <div *ngIf="commonInstruments" class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
+            <br>
             <ng-container *ngFor="let instrument of commonInstruments">
                 <h3>{{ instrument }}</h3>
                 <p>BY {{ flipArtist() }}</p>
