@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class SongBuilderComponent {
   public tempo!: String;
   public key!: String;
-  public currentArtist = ['BLASÉ','MIKEWAVE'][Math.floor(Math.random() * 2)];
+  public currentArtist!: String;
 
   public commonInstruments!: any;
 
@@ -88,7 +88,10 @@ export class SongBuilderComponent {
  }
 
   public flipArtist() {
-    if (this.currentArtist === 'BLASÉ') {
+    if (!this.currentArtist) {
+      this.currentArtist = ['BLASÉ','MIKEWAVE'][Math.floor(Math.random() * 2)]
+    }
+    else if (this.currentArtist === 'BLASÉ') {
       this.currentArtist = 'MIKEWAVE'
     } else {
       this.currentArtist = 'BLASÉ'
