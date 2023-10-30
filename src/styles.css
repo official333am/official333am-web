@@ -80,3 +80,7 @@ body {
 .center-it {
     text-align: center !important;
 }
+
+.clock-expired {
+    color: red !important;
+}
