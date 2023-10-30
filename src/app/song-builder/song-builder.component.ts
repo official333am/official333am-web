@@ -10,7 +10,7 @@ import { map, take, startWith, mapTo, switchMap } from 'rxjs/operators';
 export class SongBuilderComponent {
   public tempo!: String;
   public key!: String;
-  public currentArtist = "BLASÉ";
+  public currentArtist!: String;
   public currentStep = 0;
 
   public commonInstruments!: any;
@@ -94,7 +94,21 @@ export class SongBuilderComponent {
   }
 
   public flipArtist() {
-    if (this.currentArtist === 'BLASÉ') {
+    if (!this.currentArtist) {
+      const listOfArtist = ['BLASÉ','MIKEWAVE'];
+
+      var m = listOfArtist.length, t, i;
+  
+      while (m) {    
+      i = Math.floor(Math.random() * m--);
+      t = listOfArtist[m];
+      listOfArtist[m] = listOfArtist[i];
+      listOfArtist[i] = t;
+      }
+  
+      this.currentArtist = listOfArtist[0];
+    }
+    else if (this.currentArtist === 'BLASÉ') {
       this.currentArtist = 'MIKEWAVE'
     } else {
       this.currentArtist = 'BLASÉ'
