@@ -76,3 +76,7 @@ body {
 .ml-custom {
     margin-left: 1rem;
 }
+
+.center-it {
+    text-align: center !important;
+}

@@ -1,5 +1,5 @@
 <div class="container margin-overlay">
-    <div class="row mb-5">
+    <div class="row center-it mb-5">
         <div class="col-xs-12 col-md-6">
 
             <div class="row">
@@ -18,7 +18,7 @@
                         <p>{{ key }}</p>
                 </div>
                 <div class="col-md-12 scroll-row">
-                    <div *ngIf="commonInstruments" class="col-xs-12 col-md-8">
+                    <div *ngIf="commonInstruments" class="col-xs-12 col-md-12">
                         <br>
                         <ng-container *ngFor="let instrument of commonInstruments; index as i">
                             <ng-container *ngIf="i === isCurrentStep">
