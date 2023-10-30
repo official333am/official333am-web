@@ -126,6 +126,10 @@ export class SongBuilderComponent {
     this.currentStep = this.currentStep + 1;
   }
 
+  public resetIndex(): void {
+    this.currentStep = 0;
+  }
+
   public get isCurrentStep(): number {
     return this.currentStep;
   }
