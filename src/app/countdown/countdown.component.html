@@ -1,0 +1,12 @@
+<ng-container *ngIf="(display$ | async) as countdown; else timesup">
+    <time class="va529-countdown-clock" role="timer" aria-live="off" [attr.datetime]="countdown * 1000 | date: 'PTm:s'">
+        <h1 class="clock">
+            TIMER: {{ countdown * 1000 | date: 'm:ss' }}
+        </h1>
+    </time>
+</ng-container>
+<ng-template #timesup>
+    <div class="va529-countdown-clock va529-countdown-clock--expired" role="alert">
+        0:00
+    </div>
+</ng-template>

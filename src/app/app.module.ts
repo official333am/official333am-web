@@ -8,6 +8,7 @@ import { EPKComponent } from './epk/epk.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { SongBuilderComponent } from './song-builder/song-builder.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SongBuilderComponent } from './song-builder/song-builder.component';
     EPKComponent,
     NavigationBarComponent,
     HomeComponent,
-    SongBuilderComponent
+    SongBuilderComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,

@@ -1,32 +1,47 @@
-<br><br><br><br><br><br>
-
 <div class="container margin-overlay">
     <div class="row mb-5">
-        <div class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
-            <h1>SONG BUILDER</h1>
-            <button (click)="getRandomTempo(); getRandomKey(); flipArtist(); shuffleArray();">PRESS ME FOR A PRODUCTION PLAN</button>
-        </div>
-    </div>
+        <div class="col-xs-12 col-md-6">
 
-    <div *ngIf="tempo" class="row mb-5">
-        <div class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
-            <br>
-            <h3>TEMPO</h3>
-            <p>{{ tempo }}</p>
-            <br>
-            <h3>KEY</h3>
-            <p>{{ key }}</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>SONG BUILDER</h1>
+                    <button (click)="getRandomTempo(); getRandomKey(); shuffleArray(); resetClock(); flipArtist();">PRESS ME FOR A PRODUCTION PLAN</button>
+                </div>
+                <div *ngIf="tempo" class="col-md-12">
+                        <br>
+                        <h3>TEMPO</h3>
+                        <p>{{ tempo }}</p>
+                        <br>
+                        <h3>KEY</h3>
+                        <p>{{ key }}</p>
+                </div>
+                <div class="col-md-12 scroll-row">
+                    <div *ngIf="commonInstruments" class="col-xs-12 col-md-8">
+                        <br>
+                        <ng-container *ngFor="let instrument of commonInstruments; index as i">
+                            <ng-container *ngIf="i === isCurrentStep">
+                                <h3>{{ instrument }}</h3>
+                                <p>BY {{ flipArtist() }}</p>
+                                <button (click)="resetClock()">RESET</button>
+                                <button *ngIf="i!=0" (click)="resetClock(); flipArtist();">PREVIOUS</button>
+                                <button *ngIf="i!=commonInstruments.length-1" (click)="resetClock(); flipArtist();">NEXT</button>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="row mb-5">
-        <div *ngIf="commonInstruments" class="col-xs-12 col-md-7 sticky-md-top mobile-mt">
-            <br>
-            <ng-container *ngFor="let instrument of commonInstruments">
-                <h3>{{ instrument }}</h3>
-                <p>BY {{ flipArtist() }}</p>
-                <br>
+        <div class="col-xs-12 col-md-6">
+            <ng-container *ngIf="tempo && (displayLogic$ | async) as disp">
+                <va529-countdown [time]="disp[0]" (ding)="getDing($any($event))" [reset$]="$any(resetClock$)"></va529-countdown>
             </ng-container>
         </div>
+
     </div>
+
 </div>

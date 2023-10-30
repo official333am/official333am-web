@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { of, Subject, combineLatest, interval, timer } from 'rxjs';
+import { map, take, startWith, mapTo, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-song-builder',
@@ -9,8 +11,12 @@ export class SongBuilderComponent {
   public tempo!: String;
   public key!: String;
   public currentArtist!: String;
+  public currentStep = 0;
 
   public commonInstruments!: any;
+
+
+  public resetClock$ = new Subject();
 
   public getRandomTempo() {
     const max = 160;
@@ -85,7 +91,7 @@ export class SongBuilderComponent {
     }
  
    this.commonInstruments = array;
- }
+  }
 
   public flipArtist() {
     if (!this.currentArtist) {
@@ -112,4 +118,34 @@ export class SongBuilderComponent {
     return this.currentArtist;
   }
 
+  public previous(index: number): void {
+    this.currentStep = this.currentStep - 1;
+  }
+
+  public next(index: number): void {
+    this.currentStep = this.currentStep + 1;
+  }
+
+  public get isCurrentStep(): number {
+    return this.currentStep;
+  }
+
+  displayLogic$ = this.resetClock$.pipe(
+    startWith([1, false]),
+    switchMap(() => combineLatest([
+      this.duration$,
+      timer(0, 1000).pipe(
+        take(4),
+        map(time => time >= 3))
+    ]))
+  );
+
+  get duration$() { return of(60000 * 15) };
+  resetClock() {
+    this.resetClock$.next(void 0);
+  }
+
+  getDing(event: Event) {
+    console.log(event);
+  }
 }
