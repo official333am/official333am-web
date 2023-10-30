@@ -142,7 +142,7 @@ export class SongBuilderComponent {
     ]))
   );
 
-  get duration$() { return of(60000 * 15) };
+  get duration$() { return of(60000 * 7.5) };
   resetClock() {
     this.resetClock$.next(void 0);
   }
