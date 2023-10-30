@@ -10,10 +10,10 @@
                 </div>
                 <div *ngIf="tempo" class="col-md-12">
                         <h3>TEMPO</h3>
-                        <p>{{ tempo }}</p>
+                        <p>{{ tempo }}bpm</p>
                         <br>
                         <h3>KEY</h3>
-                        <p>{{ key }}</p>
+                        <p><a (click)="goToLink(key);">{{ key.key }}</a></p>
                 </div>
                 <div class="col-md-12 scroll-row">
                     <div *ngIf="commonInstruments" class="col-xs-12 col-md-12">
