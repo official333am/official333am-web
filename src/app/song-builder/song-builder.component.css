@@ -3,5 +3,19 @@
 }
 
 .margin-overlay {
-    margin-top: 10rem;
+    margin-top: 7rem;
 }
+
+.hidden-step {
+    visibility: hidden !important;
+}
+
+.mr-custom {
+    margin-right: 1.5rem !important;
+}
+
+.clear-button {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+  }

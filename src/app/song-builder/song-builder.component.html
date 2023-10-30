@@ -5,10 +5,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>SONG BUILDER</h1>
-                    <button (click)="getRandomTempo(); getRandomKey(); shuffleArray(); resetClock(); flipArtist();">PRESS ME FOR A PRODUCTION PLAN</button>
+                    <button class="clear-button" (click)="getRandomTempo(); getRandomKey(); shuffleArray(); resetClock(); flipArtist();">PRESS ME FOR A PRODUCTION PLAN</button>
+                    <br>
+                    <br>
+                    <br>
                 </div>
                 <div *ngIf="tempo" class="col-md-12">
-                        <br>
                         <h3>TEMPO</h3>
                         <p>{{ tempo }}</p>
                         <br>
@@ -22,10 +24,9 @@
                             <ng-container *ngIf="i === isCurrentStep">
                                 <h3>{{ instrument }}</h3>
                                 <p>BY {{ flipArtist() }}</p>
-                                <button (click)="resetClock()">RESET</button>
-                                <button *ngIf="i!=0" (click)="resetClock(); flipArtist();">PREVIOUS</button>
-                                <button *ngIf="i!=commonInstruments.length-1" (click)="resetClock(); flipArtist();">NEXT</button>
-                                <br>
+                                <button (click)="resetClock()" class="clear-button mr-custom"><i class="fa fa-refresh" aria-hidden="true"></i> RESET</button>
+                                <button *ngIf="i!=0" (click)="previous(i); resetClock(); flipArtist();" class="clear-button mr-custom"><i class="fa fa-arrow-left" aria-hidden="true"></i> PREVIOUS</button>
+                                <button *ngIf="i!=commonInstruments.length-1" class="clear-button" (click)="next(i); resetClock(); flipArtist();"><i class="fa fa-arrow-right" aria-hidden="true"></i> NEXT</button>
                                 <br>
                                 <br>
                                 <br>
