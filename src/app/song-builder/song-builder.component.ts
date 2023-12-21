@@ -31,7 +31,7 @@ export class SongBuilderComponent {
       { key: "D Major", ref: "https://www.piano-keyboard-guide.com/d-major-scale.html", splice: "https://splice.com/sounds/search/samples/create?filepath=chords&key=D&chord_type=major&asset_category_slug=loop" },
       { key: "E Major", ref: "https://www.piano-keyboard-guide.com/e-major-scale.html", splice: "https://splice.com/sounds/search/samples/create?filepath=chords&key=E&chord_type=major&asset_category_slug=loop" },
       { key: "F Major", ref: "https://www.piano-keyboard-guide.com/f-major-scale.html", splice: "https://splice.com/sounds/search/samples/create?filepath=chords&key=F&chord_type=major&asset_category_slug=loop" },
-      { key: "G Major", ref: "https://www.piano-keyboard-guide.com/g-major-scale.html", splice: "https://splice.com/sounds/search/samples/create?filepath=chords&key=G&chord_type=major&asset_category_slug=loop" },
+      { key: "G Major", ref: "https://www.piano-keyboard-guide.com/key-of-g.html", splice: "https://splice.com/sounds/search/samples/create?filepath=chords&key=G&chord_type=major&asset_category_slug=loop" },
       { key: "A Major", ref: "https://www.piano-keyboard-guide.com/a-major-scale.html", splice: "https://splice.com/sounds/search/samples/create?filepath=chords&key=A&chord_type=major&asset_category_slug=loop" },
       { key: "Bb Major", ref: "https://www.piano-keyboard-guide.com/b-flat-major-scale.html", splice: "https://splice.com/sounds/search/samples/create?filepath=chords&key=Bb&chord_type=major&asset_category_slug=loop" },
       { key: "C# Major", ref: "https://www.piano-keyboard-guide.com/c-sharp-major-scale.html", splice: "https://splice.com/sounds/search/samples/create?filepath=chords&key=C%23&chord_type=major&asset_category_slug=loop" },
