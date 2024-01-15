@@ -88,7 +88,7 @@ export class SongBuilderComponent {
       array[i] = t;
     }
 
-    this.commonInstruments = array;
+    this.commonInstruments = ["RECORD REFERENCE SCATTER VOCAL", ...array];
   }
 
   public flipArtist() {
