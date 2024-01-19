@@ -76,7 +76,8 @@ export class SongBuilderComponent {
       "STRINGS",
       "VOCAL SAMPLE",
       "FLIP A RANDOM SAMPLE OF YOU TALKING",
-      "MAKE A HARMO CHOIR WITH YOUR VOICE AND RESAMPLE IT"
+      "MAKE A HARMO CHOIR WITH YOUR VOICE AND RESAMPLE IT",
+      "TALK BOX!!!!!"
     ]
 
     var m = array.length, t, i;
